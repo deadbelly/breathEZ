@@ -1,14 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
-class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        PLACEHOLDER
-      </div>
-    );
-  }
+const App = () => {
+  return (
+    <div className="App">
+      PLACEHOLDER
+    </div>
+  );
 }
 
 export default App;
