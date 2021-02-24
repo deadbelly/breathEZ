@@ -4,16 +4,20 @@ const SearchBar = () => {
   const [search, setSearch] = useState('');
 
   return (
-    <div>
+    <form>
       <input
         type='text'
         placeholder='Enter place to search for here'
         value={search}
         onChange={event => setSearch(event.target.value)}
       />
+
       <button
-      />
-    </div>
+        onClick={event => submitSearch(event)}
+      >
+        Search!
+      </button>
+    </form>
   )
 }
 
