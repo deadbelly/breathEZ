@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import './App.css';
 import { getLocationData } from '../../apiCalls';
@@ -19,7 +20,14 @@ const App = () => {
   return (
     <div className="App">
       <Header toggleFaq={toggleFaq}/>
-      <Selector getAndSetLocationData={getAndSetLocationData}/>
+      <Route
+        exact path='/'
+        render={() => (
+          <Selector 
+            getAndSetLocationData={getAndSetLocationData}
+          />
+        )} 
+      />
     </div>
   );
 }
