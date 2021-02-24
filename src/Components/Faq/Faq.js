@@ -18,7 +18,7 @@ const Faq = () => {
       </p>
       <p>
         The AQI is divided into six categories. Each category corresponds to a different level of health concern. Each category also has a specific color. The color makes it easy for people to quickly determine whether air quality is reaching unhealthy levels in their communities.
-        <img src='' />
+        <img src='../../assets/AQI-chart.jpg'/>
       </p>
 
     </section>
