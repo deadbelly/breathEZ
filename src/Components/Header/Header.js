@@ -1,8 +1,10 @@
 import React from 'react';
 import './Header.css';
 
-const Header = () => {
-
-}
+const Header = () => (
+  <div>
+    <Faq />
+  </div>
+)
 
 export default Header;
