@@ -1,29 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../Header/Header';
-import apiCalls from '../../apiCalls';
+import { getStates, getCities, getLocationData } from '../../apiCalls';
 import './App.css';
 
 const App = () => {
   const [faqDisplay, setFaqDisplay] = useState(false);
-  const [locations, setLocations] = useState([]);
-  const [locationInfo, setLocationInfo] = useState({
-    city: '',
-    state: '',
-    country: '',
-    current: {},
-    forcast: [],
-    history: []
-  });
+  const [availableStates, setAvailableStates] = useState([]);
+  const [state, setState] = useState('');
+  const [availableCities, setAvailableCities] = useState([]);
+  const [city, setCity] = useState('');
+  const [locationData, setLocationData] = useState(null);
 
   const toggleFaq = () => {
     setFaqDisplay(!faqDisplay)
   }
 
   useEffect(async () => {
-    const states = await apiCalls.getStates()
-    const cities = await apiCalls.getCities('')
-    console.log(states.data, cities.data)
+    setAvailableStates(await getStates())
   }, [])
+
+  useEffect(async () => {
+    setAvailableCities(await getCities(state))
+  }, [state])
+
+  useEffect(async () => {
+    setLocationData(await getLocationData(state, city))
+  }, [city])
 
   return (
     <div className="App">
