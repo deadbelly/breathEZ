@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../Header/Header';
+import apiCalls from '../../apiCalls';
 import './App.css';
 
 const App = () => {
@@ -17,6 +18,10 @@ const App = () => {
   const toggleFaq = () => {
     setFaqDisplay(!faqDisplay)
   }
+
+  useEffect(async () => {
+    setLocations(await apiCalls.getStates())
+  }, [])
 
   return (
     <div className="App">
