@@ -20,11 +20,15 @@ const App = () => {
   }, [])
 
   useEffect(async () => {
-    setAvailableCities(await getCities(state))
+    if (state) {
+      setAvailableCities(await getCities(state))
+    }
   }, [state])
 
   useEffect(async () => {
-    setLocationData(await getLocationData(state, city))
+    if (city) {
+      setLocationData(await getLocationData(state, city))
+    }
   }, [city])
 
   return (
