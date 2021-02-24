@@ -25,6 +25,10 @@ const Selector = () => {
         <option value=''>Select State</option>
         {availableStates.map(state => <option value={state}>{state}</option>)}
       </select>
+      <select onChange={event => setCity(event.target.value)}>
+        <option value=''>Select City</option>
+        {availableCities.map(city => <option value={city}>{city}</option>)}
+      </select>
     </form>
   )
 }
