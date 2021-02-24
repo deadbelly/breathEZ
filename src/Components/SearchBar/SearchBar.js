@@ -11,6 +11,10 @@ const SearchBar = () => {
     clearInputs();
   }
 
+  const clearInputs = () => { 
+    setSearch('');
+  }
+
   return (
     <form>
       <input
