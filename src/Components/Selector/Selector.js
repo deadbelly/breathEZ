@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Selector.css';
 import { getStates, getCities } from '../../apiCalls';
 
-const Selector = ({getLocationData}) => {
+const Selector = ({getAndSetLocationData}) => {
 
   const [availableStates, setAvailableStates] = useState([]);
   const [state, setState] = useState('');
@@ -29,7 +29,7 @@ const Selector = ({getLocationData}) => {
 
   useEffect(async () => {
     if (city) {
-      getLocationData(state, city)
+      getAndSetLocationData(state, city)
     }
   }, [city])
 
@@ -37,11 +37,11 @@ const Selector = ({getLocationData}) => {
     <form>
       <select onChange={event => setState(event.target.value)}>
         <option value=''>Select State</option>
-        {eachState}
+        {eachState()}
       </select>
       <select onChange={event => setCity(event.target.value)}>
         <option value=''>Select City</option>
-        {eachCity}
+        {availableCities.length && eachCity()}
       </select>
     </form>
   )

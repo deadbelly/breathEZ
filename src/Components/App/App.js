@@ -12,14 +12,14 @@ const App = () => {
     setFaqDisplay(!faqDisplay)
   }
 
-  const getLocationData = async (state, city) => {
+  const getAndSetLocationData = async (state, city) => {
     setLocationData(await getLocationData(state, city))
   }
 
   return (
     <div className="App">
       <Header toggleFaq={toggleFaq}/>
-      <Selector getLocationData={getLocationData}/>
+      <Selector getAndSetLocationData={getAndSetLocationData}/>
     </div>
   );
 }
