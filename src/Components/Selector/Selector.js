@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Selector.css';
 import { getStates, getCities } from '../../apiCalls';
 
-const Selector = () => {
+const Selector = ({getLocationData}) => {
 
   const [availableStates, setAvailableStates] = useState([]);
   const [state, setState] = useState('');
@@ -18,6 +18,12 @@ const Selector = () => {
       setAvailableCities(await getCities(state))
     }
   }, [state])
+
+  useEffect(async () => {
+    if (city) {
+      getLocationData(state, city)
+    }
+  }, [city])
 
   return (
     <form>

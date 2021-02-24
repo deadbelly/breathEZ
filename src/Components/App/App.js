@@ -12,16 +12,14 @@ const App = () => {
     setFaqDisplay(!faqDisplay)
   }
 
-  // useEffect(async () => {
-  //   if (city) {
-  //     setLocationData(await getLocationData(state, city))
-  //   }
-  // }, [city])
+  const getLocationData = async (state, city) => {
+    setLocationData(await getLocationData(state, city))
+  }
 
   return (
     <div className="App">
       <Header toggleFaq={toggleFaq}/>
-      <Selector />
+      <Selector getLocationData={getLocationData}/>
     </div>
   );
 }
