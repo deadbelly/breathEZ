@@ -9,6 +9,14 @@ const Selector = ({getLocationData}) => {
   const [availableCities, setAvailableCities] = useState([]);
   const [city, setCity] = useState('');
 
+  const eachState = () => {
+    return availableStates.map(state => <option value={state}>{state}</option>)
+  }
+
+  const eachCity = () => {
+    return availableCities.map(city => <option value={city}>{city}</option>)
+  }
+
   useEffect(async () => {
     setAvailableStates(await getStates())
   }, [])
@@ -29,11 +37,11 @@ const Selector = ({getLocationData}) => {
     <form>
       <select onChange={event => setState(event.target.value)}>
         <option value=''>Select State</option>
-        {availableStates.map(state => <option value={state}>{state}</option>)}
+        {eachState}
       </select>
       <select onChange={event => setCity(event.target.value)}>
         <option value=''>Select City</option>
-        {availableCities.map(city => <option value={city}>{city}</option>)}
+        {eachCity}
       </select>
     </form>
   )
