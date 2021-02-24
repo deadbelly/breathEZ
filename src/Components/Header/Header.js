@@ -5,6 +5,7 @@ const Header = () => (
   <div>
     <h1>BreathEZ</h1>
     <Faq />
+    <SearchBar />
   </div>
 )
 
