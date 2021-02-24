@@ -20,7 +20,9 @@ const App = () => {
   }
 
   useEffect(async () => {
-    setLocations(await apiCalls.getStates())
+    const states = await apiCalls.getStates()
+    const cities = await apiCalls.getCities('')
+    console.log(states.data, cities.data)
   }, [])
 
   return (
