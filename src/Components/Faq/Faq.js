@@ -20,7 +20,26 @@ const Faq = () => {
         The AQI is divided into six categories. Each category corresponds to a different level of health concern. Each category also has a specific color. The color makes it easy for people to quickly determine whether air quality is reaching unhealthy levels in their communities.
         <img src='../../assets/AQI-chart.jpg'/>
       </p>
-
+      <h1>What are Pollutants?</h1>
+      <h2>Five Major Pollutants</h2>
+      <p>
+      EPA establishes an AQI for five major air pollutants regulated by the Clean Air Act. Each of these pollutants has a national air quality standard set by EPA to protect public health:
+        <ul>
+          ground-level ozone
+          particle pollution (also known as particulate matter, including PM2.5 and PM10)
+          carbon monoxide
+          sulfur dioxide
+          nitrogen dioxide
+        </ul>
+      </p>
+      <p>
+        Particulate matter contains microscopic solids or liquid droplets that are so small that they can be inhaled and cause serious health problems. Some particles less than 10 micrometers in diameter can get deep into your lungs and some may even get into your bloodstream. Of these, particles less than 2.5 micrometers in diameter, also known as fine particles or PM2.5, pose the greatest risk to health. Fine particles are also the main cause of reduced visibility (haze) in parts of the United States.
+      </p>
+      <h2>Difference in levels:</h2>
+      <p>
+        p1/PM10(particles with a diameter of 10 micrometres or less): these particles are small enough to pass through the throat and nose and enter the lungs. Once inhaled, these particles can affect the heart and lungs and cause serious health effects.
+        p2/PM2.5PM2.5(particles with a diameter of 2.5 micrometres or less): these particles are so small they can get deep into the lungs and into the bloodstream. There is sufficient evidence that exposure to PM2.5 over long periods (years) can cause adverse health effects. Note that PM10 includes PM2.5.
+      </p>
     </section>
   )
 }
