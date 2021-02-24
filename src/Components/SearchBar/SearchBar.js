@@ -3,6 +3,14 @@ import React, { useState } from 'react';
 const SearchBar = () => {
   const [search, setSearch] = useState('');
 
+  const submitSearch = event => {
+    // either the api call goes here for the specific location
+    // or this passes the search state back up for the api call
+    event.preventDefault();
+    // this will be the main body, whether we call here or in App
+    clearInputs();
+  }
+
   return (
     <form>
       <input
