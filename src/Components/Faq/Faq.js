@@ -1,5 +1,4 @@
 import React from 'react';
-import './Faq.css';
 
 // I am getting a warning for this file that a <ul> cannot be the child of a <p>. I'm seeing it on line 30.
 
