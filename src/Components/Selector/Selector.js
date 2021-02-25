@@ -21,7 +21,14 @@ const Selector = ({getAndSetLocationData}) => {
   }
 
   const eachCity = () => {
-    return availableCities.map(city => <option value={city}>{city}</option>)
+    return availableCities.map((city, index) => 
+      <option 
+        value={city}
+        key={index}
+      >
+      {city}
+      </option>
+    )
   }
 
   useEffect(async () => {
