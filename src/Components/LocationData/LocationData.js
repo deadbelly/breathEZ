@@ -1,5 +1,5 @@
-import React 'react';
-import './LocationInfo.css'
+import React from 'react';
+import './LocationData.css'
 
 const LocationInfo = () => {
 
