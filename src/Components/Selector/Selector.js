@@ -10,7 +10,7 @@ const Selector = ({getAndSetLocationData}) => {
   const [city, setCity] = useState('');
 
   const eachState = () => {
-    return availableStates.map((state, index) => 
+    return availableStates.map((state, index) =>
       <option
         value={state}
         key={index}
@@ -21,8 +21,8 @@ const Selector = ({getAndSetLocationData}) => {
   }
 
   const eachCity = () => {
-    return availableCities.map((city, index) => 
-      <option 
+    return availableCities.map((city, index) =>
+      <option
         value={city}
         key={index}
       >
@@ -48,7 +48,7 @@ const Selector = ({getAndSetLocationData}) => {
   }, [city])
 
   return (
-    <form>
+    <form className='selector'>
       <select onChange={event => setState(event.target.value)}>
         <option value=''>Select State</option>
         {eachState()}

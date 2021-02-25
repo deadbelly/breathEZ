@@ -1,0 +1,12 @@
+.selector {
+  background-color: #2D68AB;
+  color: #CCE1E3;
+}
+
+select {
+  background-color: #2D68AB;
+  color: #CCE1E3;
+  border: none;
+  font-size: 1.2em;
+  width: 50%;
+}
