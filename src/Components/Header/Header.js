@@ -1,5 +1,4 @@
 import React from 'react';
-import './Header.css';
 import { Link } from 'react-router-dom';
 
 const Header = ({path}) => {
@@ -15,15 +14,15 @@ const Header = ({path}) => {
       to='/'
       className='link'
     >
-    Back to Home
+    Home
     </Link>
   )
 
   return (
-    <div>
+    <header>
       <h1>BreathEZ</h1>
-      {link}
-    </div>
+      <h2>{link}</h2>
+    </header>
   )
 };
 
