@@ -1,0 +1,89 @@
+{
+    "status": "success",
+    "data": [
+        {
+            "city": "Arbon"
+        },
+        {
+            "city": "Blackfoot"
+        },
+        {
+            "city": "Boise"
+        },
+        {
+            "city": "Eagle"
+        },
+        {
+            "city": "Garden City"
+        },
+        {
+            "city": "Garden Valley"
+        },
+        {
+            "city": "Grangeville"
+        },
+        {
+            "city": "Hailey"
+        },
+        {
+            "city": "Hidden Spring"
+        },
+        {
+            "city": "Idaho City"
+        },
+        {
+            "city": "Idaho Falls"
+        },
+        {
+            "city": "Kamiah"
+        },
+        {
+            "city": "Ketchum"
+        },
+        {
+            "city": "Lapwai"
+        },
+        {
+            "city": "Lewiston"
+        },
+        {
+            "city": "McCall"
+        },
+        {
+            "city": "Meridian"
+        },
+        {
+            "city": "Moscow"
+        },
+        {
+            "city": "Nampa"
+        },
+        {
+            "city": "Pinehurst"
+        },
+        {
+            "city": "Pocatello"
+        },
+        {
+            "city": "Preston"
+        },
+        {
+            "city": "Saint Maries"
+        },
+        {
+            "city": "Salmon"
+        },
+        {
+            "city": "Sandpoint"
+        },
+        {
+            "city": "Star"
+        },
+        {
+            "city": "Twin Falls"
+        },
+        {
+            "city": "Wilder"
+        }
+    ]
+}

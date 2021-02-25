@@ -1,0 +1,11 @@
+{
+    "status": "success",
+    "data": [
+        {
+            "state": "Colorado"
+        },
+        {
+            "state": "Idaho"
+        }
+    ]
+}
