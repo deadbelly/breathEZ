@@ -1,4 +1,32 @@
 .locationData {
-  background-color: #CCE1E3;
-  color: white;
+  background-color: #2D68AB;
+  color: #CCE1E3;
+}
+
+.weather-icon {
+  height: 35vh;
+}
+
+.good {
+  color: #AEDA71;
+}
+
+.moderate {
+  color: #F4D768;
+}
+
+.risky {
+  color: #EF9F64;
+}
+
+.unhealthy {
+  color: #EC7372;
+}
+
+.very-unhealthy {
+  color: #A27CB8;
+}
+
+.hazardous {
+  color: #925D72;
 }

@@ -12,7 +12,7 @@ const LocationData = ({data}) => {
     <div className='locationData'>
       <h1>{data.city}, {data.state}</h1>
       <h1 className={rating.toLowerCase()}>AQI {data.current.pollution.aqius} - {rating}</h1>
-      <img src={src} />
+      <img className='weather-icon' src={src} />
       <h2>WEATHER</h2>
       <h3>Temperature: {celsiusToFahr(data.current.weather.tp)}˚F</h3>
       <h3>Wind Speed: {mpsToMph(data.current.weather.ws)}mph</h3>
