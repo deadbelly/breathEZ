@@ -2,70 +2,10 @@
     "status": "success",
     "data": [
         {
-            "state": "Alabama"
-        },
-        {
-            "state": "Alaska"
-        },
-        {
-            "state": "Arizona"
-        },
-        {
-            "state": "Arkansas"
-        },
-        {
-            "state": "California"
-        },
-        {
             "state": "Colorado"
         },
         {
-            "state": "Connecticut"
-        },
-        {
-            "state": "Delaware"
-        },
-        {
-            "state": "Florida"
-        },
-        {
-            "state": "Georgia"
-        },
-        {
-            "state": "Hawaii"
-        },
-        {
             "state": "Idaho"
-        },
-        {
-            "state": "Illinois"
-        },
-        {
-            "state": "Indiana"
-        },
-        {
-            "state": "Iowa"
-        },
-        {
-            "state": "Kansas"
-        },
-        {
-            "state": "Kentucky"
-        },
-        {
-            "state": "Louisiana"
-        },
-        {
-            "state": "Maine"
-        },
-        {
-            "state": "Maryland"
-        },
-        {
-            "state": "Massachusetts"
-        },
-        {
-            "state": "Michigan"
         }
     ]
 }
