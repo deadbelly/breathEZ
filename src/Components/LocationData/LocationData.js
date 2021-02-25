@@ -13,10 +13,9 @@ const LocationData = ({data}) => {
       <h1>{data.city}, {data.state}</h1>
       <h1 className={rating.toLowerCase()}>AQI {data.current.pollution.aqius} - {rating}</h1>
       <img className='weather-icon' src={src} />
-      <h2>WEATHER</h2>
-      <h3>Temperature: {celsiusToFahr(data.current.weather.tp)}˚F</h3>
-      <h3>Wind Speed: {mpsToMph(data.current.weather.ws)}mph</h3>
-      <h3>Humidity: {data.current.weather.hu}%</h3>
+      <h2>Temperature: {celsiusToFahr(data.current.weather.tp)}˚F</h2>
+      <h2>Wind Speed: {mpsToMph(data.current.weather.ws)}mph</h2>
+      <h2>Humidity: {data.current.weather.hu}%</h2>
     </div>
   )
 }
