@@ -6,7 +6,6 @@ const Header = () => (
   <div>
     <h1>BreathEZ</h1>
     <Link to='/faq'>FAQ</Link>
-    // this will be where the Search functionality will go
   </div>
 )
 
