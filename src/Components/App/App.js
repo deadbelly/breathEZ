@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import './App.css';
 import { getLocationData } from '../../apiCalls';
 import Selector from '../Selector/Selector';
+import Faq from '../Faq/Faq'
 
 const App = () => {
   const [faqDisplay, setFaqDisplay] = useState(false);
@@ -26,6 +27,12 @@ const App = () => {
           <Selector 
             getAndSetLocationData={getAndSetLocationData}
           />
+        )} 
+      />
+      <Route
+        exact path='/faq'
+        render={() => (
+          <Faq /> 
         )} 
       />
     </div>
