@@ -19,10 +19,10 @@ const Header = ({path}) => {
   )
 
   return (
-    <div>
+    <header>
       <h1>BreathEZ</h1>
       {link}
-    </div>
+    </header>
   )
 };
 
