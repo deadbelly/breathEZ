@@ -1,8 +1,15 @@
 import React from 'react';
 import './LocationData.css'
 
-const LocationInfo = () => {
+const LocationData = ({data}) => {
+  
 
+  return (
+    <div>
+      <h1>{data.city}, {data.state}</h1>
+
+    </div>
+  )
 }
 
-export default LocationInfo;
+export default LocationData;
