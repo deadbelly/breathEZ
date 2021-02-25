@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
 import Header from '../Header/Header';
-import './App.css';
 import { getLocationData } from '../../apiCalls';
 import Selector from '../Selector/Selector';
 import LocationData from '../LocationData/LocationData'
@@ -15,7 +14,7 @@ const App = () => {
   }
 
   return (
-    <div className="App">
+    <main className="App">
       <Route
         exact path='/faq'
         render={() => {
@@ -43,7 +42,7 @@ const App = () => {
           )
         }}
       />
-    </div>
+    </main>
   );
 }
 

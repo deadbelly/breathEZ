@@ -1,5 +1,4 @@
 import React from 'react';
-import './Header.css';
 import { Link } from 'react-router-dom';
 
 const Header = ({path}) => {
@@ -20,10 +19,10 @@ const Header = ({path}) => {
   )
 
   return (
-    <div>
+    <header>
       <h1>BreathEZ</h1>
       {link}
-    </div>
+    </header>
   )
 };
 
