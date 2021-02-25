@@ -1,16 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import './App.css';
 import { getLocationData } from '../../apiCalls';
 import Selector from '../Selector/Selector';
+import Faq from '../Faq/Faq';
 
 const App = () => {
-  const [faqDisplay, setFaqDisplay] = useState(false);
   const [locationData, setLocationData] = useState(null);
-
-  const toggleFaq = () => {
-    setFaqDisplay(!faqDisplay)
-  }
 
   const getAndSetLocationData = async (state, city) => {
     setLocationData(await getLocationData(state, city))
@@ -18,8 +15,31 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header toggleFaq={toggleFaq}/>
-      <Selector getAndSetLocationData={getAndSetLocationData}/>
+      <Route
+        exact path='/faq'
+        render={() => {
+          return (
+            <div>
+              <Header />
+              <Faq /> 
+            </div>
+          )
+        }} 
+      />
+      <Route
+        exact path='/'
+        render={props => {
+          const path = props.match.path;
+          return (
+            <div>
+              <Header path={path}/>
+              <Selector 
+                getAndSetLocationData={getAndSetLocationData}
+              />
+            </div>
+          )
+        }} 
+      />
     </div>
   );
 }

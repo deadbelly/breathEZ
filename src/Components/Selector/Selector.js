@@ -10,11 +10,25 @@ const Selector = ({getAndSetLocationData}) => {
   const [city, setCity] = useState('');
 
   const eachState = () => {
-    return availableStates.map(state => <option value={state}>{state}</option>)
+    return availableStates.map((state, index) => 
+      <option
+        value={state}
+        key={index}
+      >
+      {state}
+      </option>
+    )
   }
 
   const eachCity = () => {
-    return availableCities.map(city => <option value={city}>{city}</option>)
+    return availableCities.map((city, index) => 
+      <option 
+        value={city}
+        key={index}
+      >
+      {city}
+      </option>
+    )
   }
 
   useEffect(async () => {
