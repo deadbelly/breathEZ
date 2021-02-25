@@ -26,5 +26,15 @@ describe('the main view', () => {
         });
       });
 
+    cy
+      .get('form')
+      .children('select:first')
+      .select('Colorado')
+      .should('have.value', 'Colorado')
+
+      .get('form')
+      .children('select:nth-child(2)')
+      .select('Denver')
+      .should('have.value', 'Denver')
   });
 });
