@@ -14,7 +14,7 @@ const App = () => {
   }
 
   return (
-    <div className="App">
+    <main className="App">
       <Route
         exact path='/faq'
         render={() => {
@@ -42,7 +42,7 @@ const App = () => {
           )
         }}
       />
-    </div>
+    </main>
   );
 }
 

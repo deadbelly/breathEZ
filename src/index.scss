@@ -5,9 +5,10 @@
 @import '../src/Components/LocationData/_LocationData.scss';
 @import '../src/Components/Selector/_Selector.scss';
 
-* {
+body {
   margin: 0;
   padding: 0;
+  background-color: #2D68AB;
 }
 
 #blockColorblindContent {
