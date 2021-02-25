@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import './Selector.css';
 import { getStates, getCities } from '../../apiCalls';
 
 const Selector = ({getAndSetLocationData}) => {
