@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import './App.css';
 import { getLocationData } from '../../apiCalls';
 import Selector from '../Selector/Selector';
+import LocationData from '../LocationData/LocationData'
 import Faq from '../Faq/Faq';
 
 const App = () => {
@@ -21,10 +22,10 @@ const App = () => {
           return (
             <div>
               <Header />
-              <Faq /> 
+              <Faq />
             </div>
           )
-        }} 
+        }}
       />
       <Route
         exact path='/'
@@ -33,12 +34,14 @@ const App = () => {
           return (
             <div>
               <Header path={path}/>
-              <Selector 
+              <Selector
                 getAndSetLocationData={getAndSetLocationData}
               />
+              {locationData &&
+              <LocationData data={locationData} />}
             </div>
           )
-        }} 
+        }}
       />
     </div>
   );
