@@ -5,7 +5,6 @@ import iconPaths from '../../iconPaths'
 
 const LocationData = ({data}) => {
   const rating = aqiRating(data.current.pollution.aqius)
-  console.log(data.current.weather.ic)
 
   const src = iconPaths[data.current.weather.ic]
   return (
