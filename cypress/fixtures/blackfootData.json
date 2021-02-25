@@ -1,0 +1,33 @@
+{
+    "status": "success",
+    "data": {
+        "city": "Blackfoot",
+        "state": "Idaho",
+        "country": "USA",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                -112.34498,
+                43.19047
+            ]
+        },
+        "current": {
+            "weather": {
+                "ts": "2021-02-25T01:00:00.000Z",
+                "tp": -2,
+                "pr": 1027,
+                "hu": 47,
+                "ws": 1.54,
+                "wd": 50,
+                "ic": "01n"
+            },
+            "pollution": {
+                "ts": "2021-02-25T02:00:00.000Z",
+                "aqius": 11,
+                "mainus": "p2",
+                "aqicn": 4,
+                "maincn": "p2"
+            }
+        }
+    }
+}
