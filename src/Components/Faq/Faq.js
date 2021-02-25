@@ -1,4 +1,5 @@
 import React from 'react';
+import imgSrc from '../../assets/AQI-chart.jpg'
 
 const Faq = () => {
   return (
@@ -17,8 +18,8 @@ const Faq = () => {
         </p>
         <p className='paragraphs'>
           The AQI is divided into six categories. Each category corresponds to a different level of health concern. Each category also has a specific color. The color makes it easy for people to quickly determine whether air quality is reaching unhealthy levels in their communities.
-          <img src='../assets/AQI-chart.jpg' />
         </p>
+        <img src={imgSrc}/>
       
         <h2 className='titles'>What are Pollutants?</h2>
         <p className='paragraphs'>
