@@ -1,5 +1,4 @@
 import React from 'react';
-import './LocationData.css'
 import { celsiusToFahr, mpsToMph, aqiRating } from '../../statConversions';
 import iconPaths from '../../iconPaths'
 
