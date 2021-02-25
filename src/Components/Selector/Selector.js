@@ -10,14 +10,14 @@ const Selector = ({getAndSetLocationData}) => {
   const [city, setCity] = useState('');
 
   const eachState = () => {
-    return availableStates.map((state, index) => (
+    return availableStates.map((state, index) => 
       <option
         value={state}
         key={index}
       >
       {state}
       </option>
-    ))
+    )
   }
 
   const eachCity = () => {
