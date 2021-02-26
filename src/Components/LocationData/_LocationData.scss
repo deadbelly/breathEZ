@@ -1,15 +1,23 @@
-.locationData {
-  background-color: #2D68AB;
-  color: #CCE1E3;
-  height: 100vh;
-}
-
-.weather-icon {
-  height: 35vh;
+.aqi-score {
+  color: #060f4f;
 }
 
 .good {
   color: #AEDA71;
+}
+
+.hazardous {
+  color: #925D72;
+}
+
+.location-bold {
+  color: #060f4f;
+}
+
+.locationData {
+  background-color: #2D68AB;
+  color: #CCE1E3;
+  height: 80vh;
 }
 
 .moderate {
@@ -28,6 +36,7 @@
   color: #A27CB8;
 }
 
-.hazardous {
-  color: #925D72;
+.weather-icon {
+  height: 20vh;
+  width: 50vw;
 }
