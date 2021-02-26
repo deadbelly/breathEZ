@@ -42,6 +42,7 @@ const App = () => {
           )
         }}
       />
+      <h1 className='empty-space'>Please select a State then a City to view the information</h1>
     </main>
   );
 }
