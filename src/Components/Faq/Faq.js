@@ -22,27 +22,29 @@ const Faq = () => {
       <img src={imgSrc}/>
       
       <h2 className='titles'>What are Pollutants?</h2>
-      <p className='paragraphs'>
+      <div className='paragraphs'>
         EPA establishes an AQI for five major air pollutants regulated by the Clean Air Act. Each of these pollutants has a national air quality standard set by EPA to protect public health:
+        <ul>
           <li>ground-level ozone</li>
           <li>particle pollution (also known as particulate matter, including PM2.5 and PM10)</li>
           <li>carbon monoxide</li>
           <li>sulfur dioxide</li>
           <li>nitrogen dioxide</li>
-      </p>
+        </ul>
+      </div>
       <p className='paragraphs'> 
         Particulate matter contains microscopic solids or liquid droplets that are so small that they can be inhaled and cause serious health problems. Some particles less than 10 micrometers in diameter can get deep into your lungs and some may even get into your bloodstream. Of these, particles less than 2.5 micrometers in diameter, also known as fine particles or PM2.5, pose the greatest risk to health. Fine particles are also the main cause of reduced visibility (haze) in parts of the United States.
       </p>
 
       <h2 className='titles'>Difference in levels:</h2>
-      <p className='paragraphs'>
-        <span>
+      <div className='paragraphs'>
+        <p>
           p1/PM10(particles with a diameter of 10 micrometres or less): these particles are small enough to pass through the throat and nose and enter the lungs. Once inhaled, these particles can affect the heart and lungs and cause serious health effects.
-        </span>
-        <span>
-          p2/PM2.5(particles with a diameter of 2.5 micrometres or less): these particles are so small they can get deep into the lungs and into the bloodstream. There is sufficient evidence that exposure to PM2.5 over long periods (years) can cause adverse health effects. Note that PM10 includes PM2.5.
-        </span>
         </p>
+        <p>
+          p2/PM2.5(particles with a diameter of 2.5 micrometres or less): these particles are so small they can get deep into the lungs and into the bloodstream. There is sufficient evidence that exposure to PM2.5 over long periods (years) can cause adverse health effects. Note that PM10 includes PM2.5.
+        </p>
+        </div>
       
         <h2 className='titles'>Mask Facts</h2>
         <p className='paragraphs'>
