@@ -38,11 +38,11 @@ const App = () => {
               />
               {locationData &&
               <LocationData data={locationData} />}
+              {!locationData && <h1 className='empty-space'>Please select a State then a City to view the information</h1>}
             </div>
           )
         }}
       />
-      <h1 className='empty-space'>Please select a State then a City to view the information</h1>
     </main>
   );
 }
