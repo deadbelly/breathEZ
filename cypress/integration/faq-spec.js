@@ -47,6 +47,19 @@ describe('the faq page', () => {
       .should('exist')
   });
 
+  it('should have a header', () => {
+    cy
+      .get('a')
+      .click()
+
+    cy
+      .get('header')
+      .should('contain', 'BreathEZ')
+
+      .get('header a') 
+      .should('contain', 'Back to Home')
+  });
+
   it('should have faq elements', () => {
     cy
       .get('a')
