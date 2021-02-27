@@ -1,0 +1,33 @@
+{
+    "status": "success",
+    "data": {
+        "city": "Hailey",
+        "state": "Idaho",
+        "country": "USA",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                -114.31532,
+                43.51963
+            ]
+        },
+        "current": {
+            "weather": {
+                "ts": "2021-02-27T03:00:00.000Z",
+                "tp": -4,
+                "pr": 1006,
+                "hu": 58,
+                "ws": 4.12,
+                "wd": 310,
+                "ic": "04n"
+            },
+            "pollution": {
+                "ts": "2021-02-27T03:00:00.000Z",
+                "aqius": 2,
+                "mainus": "p2",
+                "aqicn": 1,
+                "maincn": "p2"
+            }
+        }
+    }
+}
