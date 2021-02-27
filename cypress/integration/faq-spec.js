@@ -46,4 +46,20 @@ describe('the faq page', () => {
       .get('form')
       .should('exist')
   });
+
+  it('should have faq elements', () => {
+    cy
+      .get('a')
+      .click()
+
+      .get('img')
+      .should('have.attr', 'src', '/static/media/AQI-chart.7b1ed9f0.jpg')
+
+      .get('body')
+      .should('contain', 'What is AQI')
+      .should('contain', 'How does AQI work?')
+      .should('contain', 'What are Pollutants?')
+      .should('contain', 'Difference in levels:')
+      .should('contain', 'Mask Facts')
+  });
 });
