@@ -93,4 +93,26 @@ describe('the main view', () => {
       .get('img')
       .should('not.exist')
   });
+
+  it('should not have data upon only picking a state', () => {
+    cy
+      .get('form')
+      .children('select:first')
+      .select('Colorado')
+      .should('have.value', 'Colorado')
+
+      .get('form')
+      .children('select:first')
+      .select('Idaho')
+      .should('have.value', 'Idaho')
+
+      .get('body')
+      .should('not.contain', 'AQI')
+      .should('not.contain', 'Temperature')
+      .should('not.contain', 'Wind Speed')
+      .should('not.contain', 'Humidity')
+
+      .get('img')
+      .should('not.exist')
+  });
 });
