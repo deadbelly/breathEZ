@@ -47,7 +47,7 @@ const Selector = ({getAndSetLocationData}) => {
   }, [city])
 
   return (
-    <form className='form'>
+    <form className='form' >
       <label> Select State:
           <select onChange={event => setState(event.target.value)}>
             <option value=''>None</option>
