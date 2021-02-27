@@ -6,7 +6,13 @@
     "src": "/breath.png",
     "type": "image/png",
     "sizes": "512x512"
-  }],
+  },
+  {
+     "src": "./maskable_icon.png",
+     "sizes": "196x196",
+     "type": "image/png",
+     "purpose": "any maskable"
+   }],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
