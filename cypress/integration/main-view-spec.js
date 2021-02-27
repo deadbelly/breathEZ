@@ -81,4 +81,16 @@ describe('the main view', () => {
       .get('form')
       .should('exist')
   })
+
+  it('should not have data upon page load', () => {
+    cy
+      .get('body')
+      .should('not.contain', 'AQI')
+      .should('not.contain', 'Temperature')
+      .should('not.contain', 'Wind Speed')
+      .should('not.contain', 'Humidity')
+
+      .get('img')
+      .should('not.exist')
+  });
 });
