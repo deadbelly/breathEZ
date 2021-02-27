@@ -1,0 +1,33 @@
+{
+    "status": "success",
+    "data": {
+        "city": "Salmon",
+        "state": "Idaho",
+        "country": "USA",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                -113.892998,
+                45.178699
+            ]
+        },
+        "current": {
+            "weather": {
+                "ts": "2021-02-27T02:00:00.000Z",
+                "tp": -2,
+                "pr": 1006,
+                "hu": 80,
+                "ws": 1.95,
+                "wd": 309,
+                "ic": "02n"
+            },
+            "pollution": {
+                "ts": "2021-02-26T23:00:00.000Z",
+                "aqius": 18,
+                "mainus": "p2",
+                "aqicn": 6,
+                "maincn": "p2"
+            }
+        }
+    }
+}

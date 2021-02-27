@@ -2,6 +2,9 @@
     "status": "success",
     "data": [
         {
+            "city": "Air Force Academy"
+        },
+        {
             "city": "Denver"
         }
     ]
