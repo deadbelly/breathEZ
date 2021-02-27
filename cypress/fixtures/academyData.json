@@ -1,0 +1,33 @@
+{
+    "status": "success",
+    "data": {
+        "city": "Air Force Academy",
+        "state": "Colorado",
+        "country": "USA",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                -104.86375,
+                38.99425
+            ]
+        },
+        "current": {
+            "weather": {
+                "ts": "2021-02-27T02:00:00.000Z",
+                "tp": 0,
+                "pr": 1006,
+                "hu": 25,
+                "ws": 3.6,
+                "wd": 290,
+                "ic": "01n"
+            },
+            "pollution": {
+                "ts": "2021-02-27T03:00:00.000Z",
+                "aqius": 0,
+                "mainus": "p2",
+                "aqicn": 0,
+                "maincn": "p2"
+            }
+        }
+    }
+}
