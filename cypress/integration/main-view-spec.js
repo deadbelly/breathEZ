@@ -134,4 +134,38 @@ describe('the main view', () => {
       .should('contain', 'Wind Speed')
       .should('contain', 'Humidity')
   });
+
+  it('should keep data if went to faq and back', () => {
+    cy
+      .get('form')
+      .children('select:first')
+      .select('Colorado')
+      .should('have.value', 'Colorado')
+
+      .get('form')
+      .children('select:nth-child(2)')
+      .select('Denver')
+      .should('have.value', 'Denver')
+
+      .get('body')
+      .should('contain', 'AQI')
+      .should('contain', 'Temperature')
+      .should('contain', 'Wind Speed')
+      .should('contain', 'Humidity')
+
+      .get('a')
+      .click()
+
+      .get('img')
+      .should('have.attr', 'src', '/static/media/AQI-chart.7b1ed9f0.jpg')
+
+      .get('a')
+      .click()
+
+      .get('body')
+      .should('contain', 'AQI')
+      .should('contain', 'Temperature')
+      .should('contain', 'Wind Speed')
+      .should('contain', 'Humidity')
+  });
 });
