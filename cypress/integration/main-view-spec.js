@@ -63,7 +63,7 @@ describe('the main view', () => {
       .click()
 
       .get('img')
-      .should('have.attr', 'src', '/static/media/AQI-chart.7b1ed9f0.jpg')
+      .should('have.attr', 'src')
   });
 
   it('should be able to return to the home page', () => {
@@ -167,5 +167,42 @@ describe('the main view', () => {
       .should('contain', 'Temperature')
       .should('contain', 'Wind Speed')
       .should('contain', 'Humidity')
+  });
+
+  it('should be able to select a new location', () => {
+    cy
+      .get('form')
+      .children('select:first')
+      .select('Colorado')
+      .should('have.value', 'Colorado')
+
+      .get('form')
+      .children('select:nth-child(2)')
+      .select('Air Force Academy')
+      .should('have.value', 'Air Force Academy')
+
+      .get('body')
+      .should('contain', 'Air Force Academy, Colorado')
+      .should('contain', 'AQI')
+      .should('contain', 'Temperature')
+      .should('contain', 'Wind Speed')
+      .should('contain', 'Humidity')
+
+      .get('img')
+      .should('have.attr', 'src')
+
+      .get('form')
+      .children('select:first')
+      .select('Idaho')
+      .should('have.value', 'Idaho')
+
+      .get('form')
+      .children('select:nth-child(2)')
+      .select('Hailey')
+      .should('have.value', 'Hailey')
+
+      .get('img')
+      .should('have.attr', 'src')
+      .should('include', 'data:image/png;')
   });
 });
