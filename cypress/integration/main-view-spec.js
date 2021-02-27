@@ -56,4 +56,29 @@ describe('the main view', () => {
       .select('Denver')
       .should('have.value', 'Denver')
   });
+
+  it('should be able to move to the faq page', () => { 
+    cy
+      .get('a')
+      .click()
+
+      .get('img')
+      .should('have.attr', 'src', '/static/media/AQI-chart.7b1ed9f0.jpg')
+  });
+
+  it('should be able to return to the home page', () => {
+    cy
+      .get('a')
+      .click()
+
+      .get('img')
+      .should('have.attr', 'src', '/static/media/AQI-chart.7b1ed9f0.jpg')
+
+    cy
+      .get('a')
+      .click()
+
+      .get('form')
+      .should('exist')
+  })
 });
