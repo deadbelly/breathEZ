@@ -115,4 +115,23 @@ describe('the main view', () => {
       .get('img')
       .should('not.exist')
   });
+
+  it('should have data when both state and city picked', () => {
+    cy
+      .get('form')
+      .children('select:first')
+      .select('Colorado')
+      .should('have.value', 'Colorado')
+
+      .get('form')
+      .children('select:nth-child(2)')
+      .select('Denver')
+      .should('have.value', 'Denver')
+
+      .get('body')
+      .should('contain', 'AQI')
+      .should('contain', 'Temperature')
+      .should('contain', 'Wind Speed')
+      .should('contain', 'Humidity')
+  });
 });
