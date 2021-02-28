@@ -66,22 +66,6 @@ describe('the main view', () => {
       .should('have.attr', 'src')
   });
 
-  it('should be able to return to the home page', () => {
-    cy
-      .get('a')
-      .click()
-
-      .get('img')
-      .should('have.attr', 'src', '/static/media/AQI-chart.7b1ed9f0.jpg')
-
-    cy
-      .get('a')
-      .click()
-
-      .get('form')
-      .should('exist')
-  })
-
   it('should not have data upon page load', () => {
     cy
       .get('body')
