@@ -1,7 +1,19 @@
+.form {
+  background-color: #060f4f;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: white;
+  font-size: 1.3em;
+}
+
 select {
   background-color: white;
   color: black;
-  border: none;
-  font-size: 1.2em;
+  font-size: 0.9em;
+  margin: 5% 2%;
   width: 50%;
+  text-align-last: center;
 }

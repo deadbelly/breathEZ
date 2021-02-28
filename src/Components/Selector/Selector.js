@@ -47,15 +47,19 @@ const Selector = ({getAndSetLocationData}) => {
   }, [city])
 
   return (
-    <form>
-      <select onChange={event => setState(event.target.value)}>
-        <option value=''>Select State</option>
-        {eachState()}
-      </select>
-      <select onChange={event => setCity(event.target.value)}>
-        <option value=''>Select City</option>
-        {availableCities.length && eachCity()}
-      </select>
+    <form className='form' >
+      <label> Select State:
+          <select onChange={event => setState(event.target.value)}>
+            <option value=''>None</option>
+            {eachState()}
+          </select>
+        </label>
+      <label> Select City: 
+        <select onChange={event => setCity(event.target.value)}>
+          <option value=''>None</option>
+          {availableCities.length && eachCity()}
+        </select>
+      </label>
     </form>
   )
 }
