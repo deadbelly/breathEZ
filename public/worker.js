@@ -1,28 +1,26 @@
 
-var CACHE_NAME = 'pwa-task-manager';
-var urlsToCache = [
+var CACHE_NAME = 'breatheasy-task-manager';
+var filesToCache = [
   '/',
-  '/completed'
+  '/static/js/main.chunk.js',
+  '/static/js/bundle.js',
+  '/static/js/vendors~main.chunk.js',
 ];
 
-// Install a service worker
 self.addEventListener('install', event => {
-  // Perform install steps
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then(function(cache) {
+      .then(cache => {
         console.log('Opened cache');
-        return cache.addAll(urlsToCache);
+        return cache.addAll(filesToCache);
       })
   );
 });
 
-// Cache and return requests
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)
-      .then(function(response) {
-        // Cache hit - return response
+      .then(response => {
         if (response) {
           return response;
         }
@@ -32,9 +30,8 @@ self.addEventListener('fetch', event => {
   );
 });
 
-// Update a service worker
 self.addEventListener('activate', event => {
-  var cacheWhitelist = ['pwa-task-manager'];
+  var cacheWhitelist = ['breatheasy-task-manager'];
   event.waitUntil(
     caches.keys().then(cacheNames => {
       return Promise.all(
