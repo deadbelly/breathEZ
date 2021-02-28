@@ -17,9 +17,17 @@ body {
 }
 
 @media only screen and (max-width: 425px) {
+  .App {
+    text-align: center;
+  }
+
   .empty-space {
     color: #CCE1E3;
     margin-top: 45%;
+  }
+
+  .faq {
+    padding: 5%;
   }
 
   .form {
@@ -30,6 +38,14 @@ body {
   .locationData {
     display: flex;
     flex-direction: column;
+  }
+
+  .paragraphs {
+    margin: 3%;
+  }
+
+  .titles {
+    margin: 5%;
   }
 
   .weather-icon {
