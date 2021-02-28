@@ -14,7 +14,9 @@
 .locationData {
   background-color: #2D68AB;
   color: #CCE1E3;
-  height: 80vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .moderate {
@@ -35,5 +37,12 @@
 
 .weather-icon {
   height: 20vh;
-  width: 50vw;
+  width: 15vw;
+  margin-top: 60%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 8% 5% 5% 5%;
 }

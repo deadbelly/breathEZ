@@ -21,4 +21,26 @@ body {
     display: flex;
     flex-direction: column;
   }
+
+  .empty-space {
+    color: #CCE1E3;
+    margin-top: 45%;
+  }
+
+  .locationData {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .weather-icon {
+    height: 20vh;
+    width: 50vw;
+    margin: 0;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
 }
