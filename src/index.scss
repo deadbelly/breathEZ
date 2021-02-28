@@ -17,14 +17,14 @@ body {
 }
 
 @media only screen and (max-width: 425px) {
-  .form {
-    display: flex;
-    flex-direction: column;
-  }
-
   .empty-space {
     color: #CCE1E3;
     margin-top: 45%;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
   }
 
   .locationData {
