@@ -10,7 +10,8 @@ const Faq = () => {
           Air Quality Index(AQI) is a tool for the United States Enviromental Protection Agency(EPA). AQI uses color-coded categories and provides statements for each category that tell you about air quality in your area, which groups of people may be affected, and steps you can take to reduce your exposure to air pollution and is a basis for reporting current air quality.
         </p>
       </Collapsible>
-      <Collapsible className='collapsible' trigger='How does AQI work?'>
+      
+      <Collapsible trigger='How does AQI work?'>
         <p className='paragraphs'>
           AQI goes from 0 to 500. The higher the AQI value, the greater level of air pollution and health concerns. For example, an AQI value of 50 or below represents good air quality, while an AQI value over 300 represents hazardous air quality.
         </p>
@@ -22,16 +23,18 @@ const Faq = () => {
         </p>
         <img src={imgSrc} alt='Graph of air quality levels'/>
       </Collapsible>
-      <Collapsible className='collapsible' trigger='What are Pollutants?'>
+
+      <Collapsible trigger='What are Pollutants?'>
         <div className='paragraphs'>
-          EPA establishes an AQI for five major air pollutants regulated by the Clean Air Act. Each of these pollutants has a national air quality standard set by EPA to protect public health:
-          <ul>
-            <li>ground-level ozone</li>
-            <li>particle pollution (also known as particulate matter, including PM2.5 and PM10)</li>
-            <li>carbon monoxide</li>
-            <li>sulfur dioxide</li>
-            <li>nitrogen dioxide</li>
-          </ul>
+          <br></br>
+            EPA establishes an AQI for five major air pollutants regulated by the Clean Air Act. Each of these pollutants has a national air quality standard set by EPA to protect public health:
+            <ul>
+              <li>ground-level ozone</li>
+              <li>particle pollution (also known as particulate matter, including PM2.5 and PM10)</li>
+              <li>carbon monoxide</li>
+              <li>sulfur dioxide</li>
+              <li>nitrogen dioxide</li>
+            </ul>
         </div>
         <p className='paragraphs'> 
           Particulate matter contains microscopic solids or liquid droplets that are so small that they can be inhaled and cause serious health problems. Some particles less than 10 micrometers in diameter can get deep into your lungs and some may even get into your bloodstream. Of these, particles less than 2.5 micrometers in diameter, also known as fine particles or PM2.5, pose the greatest risk to health. Fine particles are also the main cause of reduced visibility (haze) in parts of the United States.
@@ -39,14 +42,14 @@ const Faq = () => {
         <p className='titles'>Difference in levels:</p>
         <div className='paragraphs'>
           <p>
-            p1/PM10(particles with a diameter of 10 micrometres or less): these particles are small enough to pass through the throat and nose and enter the lungs. Once inhaled, these particles can affect the heart and lungs and cause serious health effects.
+            <b>p1/PM10</b>(particles with a diameter of 10 micrometres or less): these particles are small enough to pass through the throat and nose and enter the lungs. Once inhaled, these particles can affect the heart and lungs and cause serious health effects.
           </p>
           <p>
-            p2/PM2.5(particles with a diameter of 2.5 micrometres or less): these particles are so small they can get deep into the lungs and into the bloodstream. There is sufficient evidence that exposure to PM2.5 over long periods (years) can cause adverse health effects. Note that PM10 includes PM2.5.
+            <b>p2/PM2.5</b>(particles with a diameter of 2.5 micrometres or less): these particles are so small they can get deep into the lungs and into the bloodstream. There is sufficient evidence that exposure to PM2.5 over long periods (years) can cause adverse health effects. Note that PM10 includes PM2.5.
           </p>
         </div>
       </Collapsible>
-      <Collapsible className='collapsible' trigger='Mask Facts'>
+      <Collapsible trigger='Mask Facts'>
         <p className='paragraphs'>
           <b>Cotton Handkerchief</b> – A handkerchief is a small, cotton piece of cloth usually used as a clothing accessory or to blow your nose. Some choose to wear it as a face mask. Research shows that it blocks 28% of 0.007 micron particles.
         </p>

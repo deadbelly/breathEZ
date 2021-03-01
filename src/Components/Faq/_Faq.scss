@@ -5,9 +5,13 @@ b {
 .Collapsible {
   border: 0.2em solid white;
   background-color: #060f4f;
+  cursor: pointer;
   margin: 2%;
   text-align: center;
-  cursor: pointer;
+}
+
+.Collapsible__contentInner {
+  text-align: left;
 }
 
 .faq-body {
