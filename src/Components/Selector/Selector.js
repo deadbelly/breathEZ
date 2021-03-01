@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { getStates, getCities, getLocationData } from '../../apiCalls';
+import { getStates, getCities, getLocationData, getNearestData } from '../../apiCalls';
 
 const Selector = ({setLocationData, setError}) => {
 
   const [availableStates, setAvailableStates] = useState([]);
-  const [state, setState] = useState('');
+  const [state, setState] = useState('Current Location');
   const [availableCities, setAvailableCities] = useState([]);
   const [city, setCity] = useState('');
 
@@ -37,14 +37,17 @@ const Selector = ({setLocationData, setError}) => {
   }, [setError])
 
   useEffect(() => {
-    if (state) {
+    if (state === 'Current Location') {
+      getNearestData()
+        .then(data => setLocationData(data))
+    } else if (state) {
       getCities(state)
         .then(cities => {
           setCity('');
           setAvailableCities(cities);
         })
     }
-  }, [state])
+  }, [state, setLocationData])
 
   useEffect(() => {
     if (city) {
@@ -57,7 +60,7 @@ const Selector = ({setLocationData, setError}) => {
     <form className='form' >
       <label> Select State:
         <select onChange={event => setState(event.target.value)}>
-          <option value=''>None</option>
+          <option value='Current Location'>Current Location</option>
           {eachState()}
         </select>
       </label>
