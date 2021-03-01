@@ -1,7 +1,9 @@
 .form {
   background-color: #060f4f;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  padding: 2%;
+  justify-content: center;
 }
 
 label {
@@ -11,7 +13,6 @@ label {
 
 select {
   background-color: white;
-  color: black;
   font-size: 0.9em;
   margin: 5% 2%;
   width: 50%;

@@ -14,7 +14,7 @@ const Header = ({path}) => {
       to='/'
       className='link'
     >
-    Back to Home
+    Home
     </Link>
   )
 

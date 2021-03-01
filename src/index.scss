@@ -15,3 +15,50 @@ body {
 #blockColorblindContent {
   display: none;
 }
+
+
+// Mobile View
+@media only screen and (max-width: 425px) {
+  .App {
+    text-align: center;
+  }
+
+  .empty-space {
+    color: #CCE1E3;
+    margin-top: 45%;
+  }
+
+  .faq {
+    padding: 5%;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .locationData {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .paragraphs {
+    margin: 3%;
+  }
+
+  .titles {
+    margin: 5%;
+  }
+
+  .weather-icon {
+    height: 20vh;
+    width: 50vw;
+    margin: 0;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+}
