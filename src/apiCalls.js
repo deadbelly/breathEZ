@@ -23,9 +23,15 @@ const apiCalls = {
     return fetch(`http://api.airvisual.com/v2/city?city=${city}&state=${state}&country=USA&key=8b060d59-0210-4921-886d-d89f44fa1739`)
       .then(response => apiCalls.checkResponse(response))
       .then(data => data.data)
+  },
+
+  getNearestData() {
+    return fetch('http://api.airvisual.com/v2/nearest_city?key=8b060d59-0210-4921-886d-d89f44fa1739')
+      .then(response => apiCalls.checkResponse(response))
+      .then(data => data.data)
   }
 }
 
-const { getStates, getCities, getLocationData } = apiCalls
+const { getStates, getCities, getLocationData, getNearestData } = apiCalls
 
-export { getStates, getCities, getLocationData };
+export { getStates, getCities, getLocationData, getNearestData };
