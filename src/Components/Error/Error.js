@@ -2,9 +2,8 @@ import React from 'react';
 
 const Error = ({error}) => (
   <div className='error'>
-    <h1>Sorry!</h1>
-    <h2>Something went wrong.</h2>
-    <h3>Please try again later!</h3>
+    <h1>{error.status}</h1>
+    <h2>{error.statusText}</h2>
   </div>
 )
 
