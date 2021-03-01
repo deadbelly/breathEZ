@@ -33,28 +33,31 @@ const Selector = ({setLocationData, setError}) => {
   useEffect(() => {
     getStates()
       .then(states => setAvailableStates(states))
-      .catch(err => setError(err))
+        .catch(err => setError(err))
   }, [setError])
 
   useEffect(() => {
     if (state === 'Current Location') {
       getNearestData()
         .then(data => setLocationData(data))
+          .catch(err => setError(err))
     } else if (state) {
       getCities(state)
         .then(cities => {
           setCity('');
           setAvailableCities(cities);
         })
+          .catch(err => setError(err))
     }
-  }, [state, setLocationData])
+  }, [state, setLocationData, setError])
 
   useEffect(() => {
     if (city) {
       getLocationData(state, city)
         .then(data => setLocationData(data))
+          .catch(err => setError(err))
     }
-  }, [city, state, setLocationData])
+  }, [city, state, setLocationData, setError])
 
   return (
     <form className='form' >
