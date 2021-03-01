@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getStates, getCities } from '../../apiCalls';
 
-const Selector = ({getAndSetLocationData}) => {
+const Selector = ({getAndSetLocationData, setError}) => {
 
   const [availableStates, setAvailableStates] = useState([]);
   const [state, setState] = useState('');
@@ -33,7 +33,8 @@ const Selector = ({getAndSetLocationData}) => {
   useEffect(() => {
     getStates()
       .then(states => setAvailableStates(states))
-  }, [])
+      .catch(err => setError(err))
+  }, [setError])
 
   useEffect(() => {
     if (state) {
