@@ -46,11 +46,14 @@ const Selector = ({getAndSetLocationData}) => {
     grabCities()
   }, [state])
 
-  useEffect(async () => {
-    if (city) {
-      getAndSetLocationData(state, city)
+  useEffect(() => {
+    async function getAllLocationData() {
+      if (city) {
+        getAndSetLocationData(state, city)
+      }
     }
-  }, [city])
+    getAllLocationData()
+  }, [getAndSetLocationData, state, city])
 
   return (
     <form className='form' >
