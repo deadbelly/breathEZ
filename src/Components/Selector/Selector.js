@@ -31,29 +31,25 @@ const Selector = ({getAndSetLocationData}) => {
   }
 
   useEffect(() => {
-    async function grabStates() {
-      setAvailableStates(await getStates())
-    }
-    grabStates()
+    getStates()
+      .then(states => setAvailableStates(states))
   }, [])
 
   useEffect(() => {
-    async function grabCities() {
-      if (state) {
-      setAvailableCities(await getCities(state))
-      }
+    if (state) {
+      getCities(state)
+        .then(cities => {
+          setCity('');
+          setAvailableCities(cities);
+        })
     }
-    grabCities()
   }, [state])
 
   useEffect(() => {
-    async function getAllLocationData() {
-      if (city) {
-        getAndSetLocationData(state, city)
-      }
+    if (city) {
+      getAndSetLocationData.call(null, state, city);
     }
-    getAllLocationData()
-  }, [getAndSetLocationData, state, city])
+  }, [city])
 
   return (
     <form className='form' >

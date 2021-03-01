@@ -9,8 +9,9 @@ import Faq from '../Faq/Faq';
 const App = () => {
   const [locationData, setLocationData] = useState(null);
 
-  const getAndSetLocationData = async (state, city) => {
-    setLocationData(await getLocationData(state, city))
+  const getAndSetLocationData = (state, city) => {
+    getLocationData(state, city)
+      .then(locationData => setLocationData(locationData))
   }
 
   return (
