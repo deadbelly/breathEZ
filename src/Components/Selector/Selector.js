@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { getStates, getCities } from '../../apiCalls';
+import { getStates, getCities, getLocationData } from '../../apiCalls';
 
-const Selector = ({getAndSetLocationData, setError}) => {
+const Selector = ({setLocationData, setError}) => {
 
   const [availableStates, setAvailableStates] = useState([]);
   const [state, setState] = useState('');
@@ -48,9 +48,10 @@ const Selector = ({getAndSetLocationData, setError}) => {
 
   useEffect(() => {
     if (city) {
-      getAndSetLocationData.call(null, state, city);
+      getLocationData(state, city)
+        .then(data => setLocationData(data))
     }
-  }, [city])
+  }, [city, state, setLocationData])
 
   return (
     <form className='form' >
