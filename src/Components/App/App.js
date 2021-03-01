@@ -1,20 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import Selector from '../Selector/Selector';
 import LocationData from '../LocationData/LocationData'
 import Faq from '../Faq/Faq';
+import Error from '../Error/Error';
 
 const App = () => {
   const [locationData, setLocationData] = useState(null);
   const [error, setError] = useState(null)
-
-  useEffect(() => {
-    if(error) {
-      console.log('hi im an error', error)
-      }
-    },
-  [error])
 
   return (
     <main className="App">
@@ -42,7 +36,10 @@ const App = () => {
               />
               {locationData &&
               <LocationData data={locationData} />}
-              {!locationData && <h1 className='empty-space'>Please select a State then a City to view the information</h1>}
+              {!locationData && !error &&
+                <h1 className='empty-space'>Please select a State then a City to view the information</h1>}
+              {!locationData && error &&
+                <Error error={error}/>}
             </div>
           )
         }}
