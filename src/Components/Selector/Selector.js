@@ -56,8 +56,8 @@ const Selector = ({getAndSetLocationData}) => {
       </label>
       <label> Select City:
         <select onChange={event => setCity(event.target.value)}>
-          <option value=''>None</option>
-          {availableCities.length && eachCity() || <option value='select a state'>Select a State</option>}
+          <option value=''>{state? 'None' : 'Select a state'}</option>
+          {eachCity()}
         </select>
       </label>
     </form>
