@@ -37,10 +37,13 @@ const Selector = ({getAndSetLocationData}) => {
     grabStates()
   }, [])
 
-  useEffect(async () => {
-    if (state) {
+  useEffect(() => {
+    async function grabCities() {
+      if (state) {
       setAvailableCities(await getCities(state))
+      }
     }
+    grabCities()
   }, [state])
 
   useEffect(async () => {
