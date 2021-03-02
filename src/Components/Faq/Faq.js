@@ -49,7 +49,7 @@ const Faq = () => {
           </p>
         </div>
       </Collapsible>
-      <Collapsible trigger='Mask Facts'>
+      <Collapsible trigger='Mask Facts' tabIndex={0}>
         <p className='paragraphs'>
           <b>Cotton Handkerchief</b> – A handkerchief is a small, cotton piece of cloth usually used as a clothing accessory or to blow your nose. Some choose to wear it as a face mask. Research shows that it blocks 28% of 0.007 micron particles.
         </p>
