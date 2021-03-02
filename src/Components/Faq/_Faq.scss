@@ -2,6 +2,18 @@ b {
   color:#63ffd0;
 }
 
+.Collapsible {
+  border: 0.2em solid white;
+  background-color: #060f4f;
+  cursor: pointer;
+  margin: 2%;
+  text-align: center;
+}
+
+.Collapsible__contentInner {
+  text-align: left;
+}
+
 .faq-body {
   background-color: #2D68AB;
   color: white;
@@ -16,5 +28,5 @@ img {
 
 .titles {
   color: #060f4f;
+  font-weight: bold;
 }
-
