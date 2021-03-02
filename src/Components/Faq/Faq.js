@@ -5,7 +5,7 @@ import Collapsible from 'react-collapsible';
 const Faq = () => {
   return (
     <section className='faq-body'>
-      <Collapsible trigger='What is AQI?'>
+      <Collapsible trigger='What is AQI?' tabIndex={0}>
         <p>
           Air Quality Index(AQI) is a tool for the United States Enviromental Protection Agency(EPA). AQI uses color-coded categories and provides statements for each category that tell you about air quality in your area, which groups of people may be affected, and steps you can take to reduce your exposure to air pollution and is a basis for reporting current air quality.
         </p>
