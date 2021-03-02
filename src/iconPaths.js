@@ -23,9 +23,15 @@ const iconPaths = {
 
 '03d': scatteredClouds,
 
+'03n': scatteredClouds,
+
 '04d': brokenClouds,
 
+'04n': brokenClouds,
+
 '09d': showerRain,
+
+'09n': showerRain,
 
 '10d': rainD,
 
@@ -33,9 +39,15 @@ const iconPaths = {
 
 '11d': thunderstorm,
 
+'11n': thunderstorm,
+
 '13d': snow,
 
+'13n': snow,
+
 '50d': mist
+
+'50n': mist
 };
 
 export default iconPaths;
