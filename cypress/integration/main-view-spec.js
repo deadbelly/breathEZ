@@ -33,7 +33,7 @@ describe('the main view', () => {
       .visit('http://localhost:3000');
   });
 
-  it.only('should show Colorado and Idaho as states', () => {
+  it('should show Colorado and Idaho as states', () => {
     cy
       .get('form')
       .children('label:first')
@@ -48,15 +48,17 @@ describe('the main view', () => {
       .should('have.value', 'Idaho')
   });
 
-  it('should be able to select Denver when Colorado is selected', () => {
+  it.only('should be able to select Denver when Colorado is selected', () => {
     cy
       .get('form')
+      .children('label:first')
       .children('select:first')
       .select('Colorado')
       .should('have.value', 'Colorado')
 
       .get('form')
-      .children('select:nth-child(2)')
+      .children('label:nth-child(2)')
+      .children('select:first')
       .select('Denver')
       .should('have.value', 'Denver')
   });
