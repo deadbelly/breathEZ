@@ -59,7 +59,7 @@ describe('the faq page', () => {
       .should('contain', 'BreathEZ')
 
       .get('header a') 
-      .should('contain', 'Back to Home')
+      .should('contain', 'Home')
   });
 
   it('should have faq elements', () => {
@@ -74,7 +74,9 @@ describe('the faq page', () => {
       .should('contain', 'What is AQI')
       .should('contain', 'How does AQI work?')
       .should('contain', 'What are Pollutants?')
+      .should('contain', 'Particulate matter')
       .should('contain', 'Difference in levels:')
       .should('contain', 'Mask Facts')
+      .should('contain', 'Homemade Mask')
   });
 });
