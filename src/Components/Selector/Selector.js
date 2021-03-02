@@ -77,7 +77,7 @@ const Selector = ({setLocationData, setError}) => {
       </label>
       <label> Select City:
         <select value={city} onChange={event => setValues(state, event.target.value)}>
-          <option value=''>{state? 'None' : 'Select a state'}</option>
+          <option value=''>{state === 'Current Location'? 'Select a state' : 'None'}</option>
           {eachCity()}
         </select>
       </label>
