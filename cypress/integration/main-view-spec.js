@@ -30,6 +30,15 @@ describe('the main view', () => {
       });
 
     cy
+      .fixture('../fixtures/denverData.json')
+      .then(data => {
+        cy.intercept('GET',`http://api.airvisual.com/v2/nearest_city?key=${key}`, {
+          statusCode: 200,
+          body: data
+        });
+      });
+
+    cy
       .visit('http://localhost:3000');
   });
 
@@ -48,7 +57,7 @@ describe('the main view', () => {
       .should('have.value', 'Idaho')
   });
 
-  it.only('should be able to select Denver when Colorado is selected', () => {
+  it('should be able to select Denver when Colorado is selected', () => {
     cy
       .get('form')
       .children('label:first')
@@ -84,26 +93,20 @@ describe('the main view', () => {
       .should('not.exist')
   });
 
-  it('should not have data upon only picking a state', () => {
+  it.only('should not have new data upon only picking a state', () => {
     cy
       .get('form')
-      .children('select:first')
-      .select('Colorado')
-      .should('have.value', 'Colorado')
-
-      .get('form')
+      .children('label:first')
       .children('select:first')
       .select('Idaho')
       .should('have.value', 'Idaho')
 
       .get('body')
-      .should('not.contain', 'AQI')
-      .should('not.contain', 'Temperature')
-      .should('not.contain', 'Wind Speed')
-      .should('not.contain', 'Humidity')
-
-      .get('img')
-      .should('not.exist')
+      .should('contain', 'Denver, Colorado')
+      .should('contain', 'AQI')
+      .should('contain', 'Temperature')
+      .should('contain', 'Wind Speed')
+      .should('contain', 'Humidity')
   });
 
   it('should have data when both state and city picked', () => {
