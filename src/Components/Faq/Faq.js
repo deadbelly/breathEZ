@@ -11,7 +11,7 @@ const Faq = () => {
         </p>
       </Collapsible>
       
-      <Collapsible trigger='How does AQI work?'>
+      <Collapsible trigger='How does AQI work?' tabIndex={0}>
         <p className='paragraphs'>
           AQI goes from 0 to 500. The higher the AQI value, the greater level of air pollution and health concerns. For example, an AQI value of 50 or below represents good air quality, while an AQI value over 300 represents hazardous air quality.
         </p>
