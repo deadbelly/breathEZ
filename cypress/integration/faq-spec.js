@@ -79,4 +79,18 @@ describe('the faq page', () => {
       .should('contain', 'Mask Facts')
       .should('contain', 'Homemade Mask')
   });
+
+  it('should be able to click on a collapsible', () => {
+    cy
+      .get('a')
+      .click()
+
+    cy
+      .get('section')
+      .children('div:first')
+      .click()
+      .children('span:first')
+      .invoke('attr', 'class')
+      .should('contain', 'is-open')
+  });
 });
