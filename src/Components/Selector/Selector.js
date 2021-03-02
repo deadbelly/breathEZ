@@ -38,6 +38,7 @@ const Selector = ({setLocationData, setError}) => {
 
   useEffect(() => {
     if (state === 'Current Location') {
+      setLocationData(null)
       getNearestData()
         .then(data => {
           setAvailableCities([])
@@ -55,6 +56,7 @@ const Selector = ({setLocationData, setError}) => {
 
   useEffect(() => {
     if (city !== '') {
+      setLocationData(null)
       getLocationData(state, city)
         .then(data => setLocationData(data))
           .catch(err => setError(err))
