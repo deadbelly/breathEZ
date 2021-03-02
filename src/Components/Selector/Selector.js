@@ -30,6 +30,12 @@ const Selector = ({setLocationData, setError}) => {
     )
   }
 
+  const setValues = (state, city) => {
+    setState(state);
+    setCity(city);
+    setError(null);
+  }
+
   useEffect(() => {
     getStates()
       .then(states => setAvailableStates(states))
@@ -38,7 +44,6 @@ const Selector = ({setLocationData, setError}) => {
 
   useEffect(() => {
     if (state === 'Current Location') {
-      setLocationData(null)
       getNearestData()
         .then(data => {
           setAvailableCities([])
@@ -56,7 +61,6 @@ const Selector = ({setLocationData, setError}) => {
 
   useEffect(() => {
     if (city !== '') {
-      setLocationData(null)
       getLocationData(state, city)
         .then(data => setLocationData(data))
           .catch(err => setError(err))
@@ -66,16 +70,13 @@ const Selector = ({setLocationData, setError}) => {
   return (
     <form className='form' >
       <label> Select State:
-        <select value={state} onChange={event => {
-          setCity('');
-          setState(event.target.value);
-        }}>
+        <select value={state} onChange={event => setValues(event.target.value, '')}>
           <option value='Current Location'>Current Location</option>
           {eachState()}
         </select>
       </label>
       <label> Select City:
-        <select value={city} onChange={event => setCity(event.target.value)}>
+        <select value={city} onChange={event => setValues(state, event.target.value)}>
           <option value=''>{state? 'None' : 'Select a state'}</option>
           {eachCity()}
         </select>

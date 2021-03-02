@@ -34,10 +34,9 @@ const App = () => {
                 setLocationData={setLocationData}
                 setError={setError}
               />
-              {locationData &&
+              {locationData && !error &&
               <LocationData data={locationData} />}
-              {!locationData && error &&
-                <Error error={error}/>}
+              {error && <Error error={error}/>}
             </div>
           )
         }}
