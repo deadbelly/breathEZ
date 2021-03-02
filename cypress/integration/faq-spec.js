@@ -1,9 +1,11 @@
+import { key } from '../../src/apiCalls';
+
 describe('the faq page', () => {
   beforeEach(() => {
     cy
       .fixture('../fixtures/statesData.json')
       .then(data => {
-        cy.intercept('GET', 'http://api.airvisual.com/v2/states?country=USA&key=6c462cce-4580-4d36-b154-0e6f353635c6', {
+        cy.intercept('GET', `http://api.airvisual.com/v2/states?country=USA&key=${key}`, {
           statusCode: 200,
           body: data
         });
@@ -12,7 +14,7 @@ describe('the faq page', () => {
     cy
       .fixture('../fixtures/idCities.json')
       .then(data => {
-        cy.intercept('GET', 'http://api.airvisual.com/v2/cities?state=Idaho&country=USA&key=6c462cce-4580-4d36-b154-0e6f353635c6', {
+        cy.intercept('GET', `http://api.airvisual.com/v2/cities?state=Idaho&country=USA&key=${key}`, {
           statusCode: 200,
           body: data
         });
@@ -21,7 +23,7 @@ describe('the faq page', () => {
     cy
       .fixture('../fixtures/coCities.json')
       .then(data => {
-        cy.intercept('GET', 'http://api.airvisual.com/v2/cities?state=Colorado&country=USA&key=6c462cce-4580-4d36-b154-0e6f353635c6', {
+        cy.intercept('GET', `http://api.airvisual.com/v2/cities?state=Colorado&country=USA&key=${key}`, {
           statusCode: 200,
           body: data
         });
