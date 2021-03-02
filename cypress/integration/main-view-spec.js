@@ -109,7 +109,7 @@ describe('the main view', () => {
       .should('contain', 'Humidity')
   });
 
-  it.only('should have data when both state and city picked', () => {
+  it('should have data when both state and city picked', () => {
     cy
       .get('form')
       .children('label:first')
@@ -131,19 +131,22 @@ describe('the main view', () => {
       .should('contain', 'Humidity')
   });
 
-  it('should keep data if went to faq and back', () => {
+  it.only('should display default data if went to faq and back', () => {
     cy
       .get('form')
+      .children('label:first')
       .children('select:first')
       .select('Colorado')
       .should('have.value', 'Colorado')
 
       .get('form')
-      .children('select:nth-child(2)')
-      .select('Denver')
-      .should('have.value', 'Denver')
+      .children('label:nth-child(2)')
+      .children('select:first')
+      .select('Air Force Academy')
+      .should('have.value', 'Air Force Academy')
 
       .get('body')
+      .should('contain', 'Air Force Academy')
       .should('contain', 'AQI')
       .should('contain', 'Temperature')
       .should('contain', 'Wind Speed')
@@ -159,6 +162,7 @@ describe('the main view', () => {
       .click()
 
       .get('body')
+      .should('contain', 'Denver')
       .should('contain', 'AQI')
       .should('contain', 'Temperature')
       .should('contain', 'Wind Speed')
