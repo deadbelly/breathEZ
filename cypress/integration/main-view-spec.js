@@ -131,7 +131,7 @@ describe('the main view', () => {
       .should('contain', 'Humidity')
   });
 
-  it.only('should display default data if went to faq and back', () => {
+  it('should display default data if went to faq and back', () => {
     cy
       .get('form')
       .children('label:first')
@@ -172,12 +172,14 @@ describe('the main view', () => {
   it('should be able to select a new location', () => {
     cy
       .get('form')
+      .children('label:first')
       .children('select:first')
       .select('Colorado')
       .should('have.value', 'Colorado')
 
       .get('form')
-      .children('select:nth-child(2)')
+      .children('label:nth-child(2)')
+      .children('select:first')
       .select('Air Force Academy')
       .should('have.value', 'Air Force Academy')
 
@@ -192,12 +194,14 @@ describe('the main view', () => {
       .should('have.attr', 'src')
 
       .get('form')
+      .children('label:first')
       .children('select:first')
       .select('Idaho')
       .should('have.value', 'Idaho')
 
       .get('form')
-      .children('select:nth-child(2)')
+      .children('label:nth-child(2)')
+      .children('select:first')
       .select('Hailey')
       .should('have.value', 'Hailey')
 
