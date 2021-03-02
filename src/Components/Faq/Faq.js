@@ -11,7 +11,7 @@ const Faq = () => {
         </p>
       </Collapsible>
       
-      <Collapsible trigger='How does AQI work?'>
+      <Collapsible trigger='How does AQI work?' tabIndex={0}>
         <p className='paragraphs'>
           AQI goes from 0 to 500. The higher the AQI value, the greater level of air pollution and health concerns. For example, an AQI value of 50 or below represents good air quality, while an AQI value over 300 represents hazardous air quality.
         </p>
@@ -24,7 +24,7 @@ const Faq = () => {
         <img src={imgSrc} alt='Graph of air quality levels'/>
       </Collapsible>
 
-      <Collapsible trigger='What are Pollutants?'>
+      <Collapsible trigger='What are Pollutants?' tabIndex={0}>
         <div className='paragraphs'>
           <br></br>
             EPA establishes an AQI for five major air pollutants regulated by the Clean Air Act. Each of these pollutants has a national air quality standard set by EPA to protect public health:
@@ -49,7 +49,7 @@ const Faq = () => {
           </p>
         </div>
       </Collapsible>
-      <Collapsible trigger='Mask Facts'>
+      <Collapsible trigger='Mask Facts' tabIndex={0}>
         <p className='paragraphs'>
           <b>Cotton Handkerchief</b> – A handkerchief is a small, cotton piece of cloth usually used as a clothing accessory or to blow your nose. Some choose to wear it as a face mask. Research shows that it blocks 28% of 0.007 micron particles.
         </p>
