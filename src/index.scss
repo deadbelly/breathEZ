@@ -10,6 +10,11 @@ body {
   padding: 0;
   background-color: #2D68AB;
   font-family: 'Open Sans', sans-serif;
+  z-index: 1;
+}
+
+a {
+  z-index: 10;
 }
 
 #blockColorblindContent {

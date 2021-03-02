@@ -10,7 +10,7 @@ const Header = ({path}) => {
     FAQ
     </Link>
   ) : (
-    <Link 
+    <Link
       to='/'
       className='link'
     >
