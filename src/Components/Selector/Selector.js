@@ -40,7 +40,6 @@ const Selector = ({setLocationData, setError}) => {
     if (state === 'Current Location') {
       getNearestData()
         .then(data => {
-          setCity('')
           setAvailableCities([])
           setLocationData(data)
         })
@@ -48,7 +47,6 @@ const Selector = ({setLocationData, setError}) => {
     } else if (state) {
       getCities(state)
         .then(cities => {
-          setCity('');
           setAvailableCities(cities);
         })
           .catch(err => setError(err))
@@ -66,7 +64,10 @@ const Selector = ({setLocationData, setError}) => {
   return (
     <form className='form' >
       <label> Select State:
-        <select value={state} onChange={event => setState(event.target.value)}>
+        <select value={state} onChange={event => {
+          setCity('');
+          setState(event.target.value);
+        }}>
           <option value='Current Location'>Current Location</option>
           {eachState()}
         </select>
