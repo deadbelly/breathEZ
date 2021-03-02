@@ -1,11 +1,12 @@
-import { key } from '../../src/apiCalls.js';
+import { key } from '../../src/apiCalls';
 
 describe('the main view', () => { 
   beforeEach(() => {
+    cy.wait(500)
     cy
       .fixture('../fixtures/statesData.json')
       .then(data => {
-        cy.intercept('GET', `http://api.airvisual.com/v2/states?country=USA&key=${key}`, {
+        cy.intercept('GET', `https://api.airvisual.com/v2/states?country=USA&key=${key}`, {
           statusCode: 200,
           body: data
         });
@@ -14,7 +15,7 @@ describe('the main view', () => {
     cy
       .fixture('../fixtures/idCities.json')
       .then(data => {
-        cy.intercept('GET', `http://api.airvisual.com/v2/cities?state=Idaho&country=USA&key=${key}`, {
+        cy.intercept('GET', `https://api.airvisual.com/v2/cities?state=Idaho&country=USA&key=${key}`, {
           statusCode: 200,
           body: data
         });
@@ -23,7 +24,7 @@ describe('the main view', () => {
     cy
       .fixture('../fixtures/coCities.json')
       .then(data => {
-        cy.intercept('GET', `http://api.airvisual.com/v2/cities?state=Colorado&country=USA&key=${key}`, {
+        cy.intercept('GET', `https://api.airvisual.com/v2/cities?state=Colorado&country=USA&key=${key}`, {
           statusCode: 200,
           body: data
         });
@@ -32,7 +33,7 @@ describe('the main view', () => {
     cy
       .fixture('../fixtures/denverData.json')
       .then(data => {
-        cy.intercept('GET',`http://api.airvisual.com/v2/nearest_city?key=${key}`, {
+        cy.intercept('GET',`https://api.airvisual.com/v2/nearest_city?key=${key}`, {
           statusCode: 200,
           body: data
         });
@@ -79,18 +80,6 @@ describe('the main view', () => {
 
       .get('img')
       .should('have.attr', 'src')
-  });
-
-  it('should not have data upon page load', () => {
-    cy
-      .get('body')
-      .should('not.contain', 'AQI')
-      .should('not.contain', 'Temperature')
-      .should('not.contain', 'Wind Speed')
-      .should('not.contain', 'Humidity')
-
-      .get('img')
-      .should('not.exist')
   });
 
   it('should not have new data upon only picking a state', () => {
