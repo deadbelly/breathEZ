@@ -33,14 +33,16 @@ describe('the main view', () => {
       .visit('http://localhost:3000');
   });
 
-  it('should show Colorado and Idaho as states', () => {
+  it.only('should show Colorado and Idaho as states', () => {
     cy
       .get('form')
+      .children('label:first')
       .children('select:first')
       .select('Colorado')
       .should('have.value', 'Colorado')
 
       .get('form')
+      .children('label:first')
       .children('select:first')
       .select('Idaho')
       .should('have.value', 'Idaho')
