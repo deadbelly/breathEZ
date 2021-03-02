@@ -1,5 +1,7 @@
 import { celsiusToFahr, mpsToMph } from './statConversions';
 
+const key = 'eb15d9fb-58bc-47d9-acd8-799b10f06ee9';
+
 const apiCalls = {
   checkResponse(response) {
     if (response.ok) {
@@ -22,27 +24,25 @@ const apiCalls = {
   },
 
   getStates() {
-
-    return fetch('https://api.airvisual.com/v2/states?country=USA&key=eb15d9fb-58bc-47d9-acd8-799b10f06ee9')
+    return fetch(`https://api.airvisual.com/v2/states?country=USA&key=${key}`)
       .then(response => apiCalls.checkResponse(response))
       .then(states => states.data.map(state => state.state))
   },
 
   getCities(state) {
-
-    return fetch(`https://api.airvisual.com/v2/cities?state=${state}&country=USA&key=eb15d9fb-58bc-47d9-acd8-799b10f06ee9`)
+    return fetch(`https://api.airvisual.com/v2/cities?state=${state}&country=USA&key=${key}`)
       .then(response => apiCalls.checkResponse(response))
       .then(cities => cities.data.map(city => city.city))
   },
 
   getLocationData(state, city) {
-    return fetch(`https://api.airvisual.com/v2/city?city=${city}&state=${state}&country=USA&key=eb15d9fb-58bc-47d9-acd8-799b10f06ee9`)
+    return fetch(`https://api.airvisual.com/v2/city?city=${city}&state=${state}&country=USA&key=${key}`)
       .then(response => apiCalls.checkResponse(response))
       .then(data => apiCalls.cleanData(data.data))
   },
 
   getNearestData() {
-    return fetch('https://api.airvisual.com/v2/nearest_city?key=eb15d9fb-58bc-47d9-acd8-799b10f06ee9')
+    return fetch(`https://api.airvisual.com/v2/nearest_city?key=${key}`)
       .then(response => apiCalls.checkResponse(response))
       .then(data => apiCalls.cleanData(data.data))
   }
@@ -50,4 +50,4 @@ const apiCalls = {
 
 const { getStates, getCities, getLocationData, getNearestData } = apiCalls;
 
-export { getStates, getCities, getLocationData, getNearestData };
+export { getStates, getCities, getLocationData, getNearestData, key };
