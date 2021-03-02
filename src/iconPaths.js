@@ -45,7 +45,7 @@ const iconPaths = {
 
 '13n': snow,
 
-'50d': mist
+'50d': mist,
 
 '50n': mist
 };
