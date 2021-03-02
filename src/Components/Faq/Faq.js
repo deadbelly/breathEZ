@@ -24,7 +24,7 @@ const Faq = () => {
         <img src={imgSrc} alt='Graph of air quality levels'/>
       </Collapsible>
 
-      <Collapsible trigger='What are Pollutants?'>
+      <Collapsible trigger='What are Pollutants?' tabIndex={0}>
         <div className='paragraphs'>
           <br></br>
             EPA establishes an AQI for five major air pollutants regulated by the Clean Air Act. Each of these pollutants has a national air quality standard set by EPA to protect public health:
