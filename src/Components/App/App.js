@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
 import Header from '../Header/Header';
-import { getLocationData } from '../../apiCalls';
 import Selector from '../Selector/Selector';
 import LocationData from '../LocationData/LocationData'
 import Faq from '../Faq/Faq';
+import Error from '../Error/Error';
 
 const App = () => {
   const [locationData, setLocationData] = useState(null);
-
-  const getAndSetLocationData = async (state, city) => {
-    setLocationData(await getLocationData(state, city))
-  }
+  const [error, setError] = useState(null)
 
   return (
     <main className="App">
@@ -34,11 +31,12 @@ const App = () => {
             <div>
               <Header path={path}/>
               <Selector
-                getAndSetLocationData={getAndSetLocationData}
+                setLocationData={setLocationData}
+                setError={setError}
               />
-              {locationData &&
+              {locationData && !error &&
               <LocationData data={locationData} />}
-              {!locationData && <h1 className='empty-space'>Please select a State then a City to view the information</h1>}
+              {error && <Error error={error}/>}
             </div>
           )
         }}

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { getStates, getCities } from '../../apiCalls';
+import { getStates, getCities, getLocationData, getNearestData } from '../../apiCalls';
 
-const Selector = ({getAndSetLocationData}) => {
+const Selector = ({setLocationData, setError}) => {
 
   const [availableStates, setAvailableStates] = useState([]);
-  const [state, setState] = useState('');
+  const [state, setState] = useState('Current Location');
   const [availableCities, setAvailableCities] = useState([]);
   const [city, setCity] = useState('');
 
@@ -30,32 +30,53 @@ const Selector = ({getAndSetLocationData}) => {
     )
   }
 
-  useEffect(async () => {
-    setAvailableStates(await getStates())
-  }, [])
+  const setValues = (state, city) => {
+    setState(state);
+    setCity(city);
+    setError(null);
+  }
 
-  useEffect(async () => {
-    if (state) {
-      setAvailableCities(await getCities(state))
-    }
-  }, [state])
+  useEffect(() => {
+    getStates()
+      .then(states => setAvailableStates(states))
+        .catch(err => setError(err))
+  }, [setError])
 
-  useEffect(async () => {
-    if (city) {
-      getAndSetLocationData(state, city)
+  useEffect(() => {
+    if (state === 'Current Location') {
+      getNearestData()
+        .then(data => {
+          setAvailableCities([])
+          setLocationData(data)
+        })
+          .catch(err => setError(err))
+    } else if (state) {
+      getCities(state)
+        .then(cities => {
+          setAvailableCities(cities);
+        })
+          .catch(err => setError(err))
     }
-  }, [city])
+  }, [state, setLocationData, setError])
+
+  useEffect(() => {
+    if (city !== '') {
+      getLocationData(state, city)
+        .then(data => setLocationData(data))
+          .catch(err => setError(err))
+    }
+  }, [city, state, setLocationData, setError])
 
   return (
     <form className='form' >
       <label> Select State:
-        <select onChange={event => setState(event.target.value)}>
-          <option value=''>None</option>
+        <select value={state} onChange={event => setValues(event.target.value, '')}>
+          <option value='Current Location'>Current Location</option>
           {eachState()}
         </select>
       </label>
       <label> Select City:
-        <select onChange={event => setCity(event.target.value)}>
+        <select value={city} onChange={event => setValues(state, event.target.value)}>
           <option value=''>{state? 'None' : 'Select a state'}</option>
           {eachCity()}
         </select>
