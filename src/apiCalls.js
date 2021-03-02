@@ -23,26 +23,26 @@ const apiCalls = {
 
   getStates() {
 
-    return fetch('http://api.airvisual.com/v2/states?country=USA&key=13480d37-c37a-4013-aef2-8826ac3d8390')
+    return fetch('http://api.airvisual.com/v2/states?country=USA&key=eb15d9fb-58bc-47d9-acd8-799b10f06ee9')
       .then(response => apiCalls.checkResponse(response))
       .then(states => states.data.map(state => state.state))
   },
 
   getCities(state) {
 
-    return fetch(`http://api.airvisual.com/v2/cities?state=${state}&country=USA&key=13480d37-c37a-4013-aef2-8826ac3d8390`)
+    return fetch(`http://api.airvisual.com/v2/cities?state=${state}&country=USA&key=eb15d9fb-58bc-47d9-acd8-799b10f06ee9`)
       .then(response => apiCalls.checkResponse(response))
       .then(cities => cities.data.map(city => city.city))
   },
 
   getLocationData(state, city) {
-    return fetch(`http://api.airvisual.com/v2/city?city=${city}&state=${state}&country=USA&key=13480d37-c37a-4013-aef2-8826ac3d8390`)
+    return fetch(`http://api.airvisual.com/v2/city?city=${city}&state=${state}&country=USA&key=eb15d9fb-58bc-47d9-acd8-799b10f06ee9`)
       .then(response => apiCalls.checkResponse(response))
       .then(data => apiCalls.cleanData(data.data))
   },
 
   getNearestData() {
-    return fetch('http://api.airvisual.com/v2/nearest_city?key=13480d37-c37a-4013-aef2-8826ac3d8390')
+    return fetch('http://api.airvisual.com/v2/nearest_city?key=eb15d9fb-58bc-47d9-acd8-799b10f06ee9')
       .then(response => apiCalls.checkResponse(response))
       .then(data => apiCalls.cleanData(data.data))
   }
