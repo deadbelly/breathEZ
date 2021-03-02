@@ -24,25 +24,25 @@ const apiCalls = {
   },
 
   getStates() {
-    return fetch(`http://api.airvisual.com/v2/states?country=USA&key=${key}`)
+    return fetch(`https://api.airvisual.com/v2/states?country=USA&key=${key}`)
       .then(response => apiCalls.checkResponse(response))
       .then(states => states.data.map(state => state.state))
   },
 
   getCities(state) {
-    return fetch(`http://api.airvisual.com/v2/cities?state=${state}&country=USA&key=${key}`)
+    return fetch(`https://api.airvisual.com/v2/cities?state=${state}&country=USA&key=${key}`)
       .then(response => apiCalls.checkResponse(response))
       .then(cities => cities.data.map(city => city.city))
   },
 
   getLocationData(state, city) {
-    return fetch(`http://api.airvisual.com/v2/city?city=${city}&state=${state}&country=USA&key=${key}`)
+    return fetch(`https://api.airvisual.com/v2/city?city=${city}&state=${state}&country=USA&key=${key}`)
       .then(response => apiCalls.checkResponse(response))
       .then(data => apiCalls.cleanData(data.data))
   },
 
   getNearestData() {
-    return fetch(`http://api.airvisual.com/v2/nearest_city?key=${key}`)
+    return fetch(`https://api.airvisual.com/v2/nearest_city?key=${key}`)
       .then(response => apiCalls.checkResponse(response))
       .then(data => apiCalls.cleanData(data.data))
   }
