@@ -43,3 +43,26 @@ describe('404 errors', () => {
       .should('contain', 'Not Found')
   });
 });
+
+describe('501 errors', () => {
+  beforeEach(() => {
+    cy
+      .fixture('../fixtures/statesData.json')
+      .then(data => {
+        cy.intercept('GET', `https://api.airvisual.com/v2/states?country=USA&key=${key}`, {
+          statusCode: 501
+        });
+    });
+
+    cy
+      .visit('http://localhost:3000') 
+  });
+
+  it('should render', () => {
+    cy
+      .get('body')
+      .should('contain', '501')
+      .should('contain', 'Not Implemented')
+  });
+});
+
