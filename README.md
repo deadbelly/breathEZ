@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# BreathEZ
+BreathEZ is an app that informs users of air quality where they live, and in other cities across the US. It's Progressive Web Application designed for mobile use and is currently deployed [here](https://breath-ez.vercel.app/). The desktop version is fully functional but we highly recommend viewing the app on mobile. We should note however that there is a [known issue](https://github.com/deadbelly/breathEZ/issues/65) with BreathEZ on iOS. This issue is not present on android. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Installation
+To install this app: 
+```
+git clone <<url>>
+cd ~/breath-ez
+npm i
+```
 
-## Available Scripts
+Once all the dependancies are installed run `npm start` and the site should be accessible at `http://localhost:3000/`.
 
-In the project directory, you can run:
+## Technologies
+This app is built in `React` using the `create-react-app` boilerplate. It also uses... 
 
-### `npm start`
+-`react-router-dom`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+-`react-collapsible`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+-`node-sass`
 
-### `npm test`
+-`fetch api`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-`HTML5`
 
-### `npm run build`
+-`cypress`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## API
+This app relies on the [AirVisual API](https://api-docs.iqair.com/) run by IQAir. This is an amazing API that lets us access reliable air quality and weather data. We're using the community (free) version, which puts limits on how many API calls the user can make per day, minute, and second. We've intentionally designed this app to slow the user down just enough that they shouldn't run into this problem, but if they do we have dynamic error handling that makes the process user-friendly. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Features 
+Upon visiting BreathEZ the user will see air quality and weather information for the available city nearest to them. If they would like to view data for a different city they can select a state and city using a drop-down menu. The list of available states fetches on page load, and when you select a state the app will fetch a list of available cities within that state.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The user can also click "FAQ" in the upper righthand corner if they have questions about how air quality is rated in the US, what kinds of pollutants our app can measure, and the effectiveness of different kinds of masks. Most importantly our FAQ page contains information on what AQI levels to worry about based on your health and medical history. 
 
-### `npm run eject`
+![Using the app on mobile](https://media.giphy.com/media/uub3o9zv9lyBOTHOGh/giphy.gif)
+![Viewing the FAQ on mobile](https://media.giphy.com/media/6TsktaRfyQG9gopjc8/giphy.gif)
+![Using the app on a desktop](https://media.giphy.com/media/5okKzUEN3oHUOP3RcV/giphy.gif)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Testing 
+We use [cypress](https://www.cypress.io/) for end to end and integration testing. In order to test the site run `npm run cypress` and you should be brought to a testing suite. The tests use stubbed api calls, but do expect the site to run locally. Make sure you've run `npm start` in an open tab and can visit the site before testing. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## `sw.js` and `runRegistration.js`
+We originally used boilerplate service worker and registration logic provided to us by a `create-react-app` template. Eventually we converted this to a service worker of our own design that operates a little differently. This worker lives in our `public` directory, not `src` and the registration is called directly in `index.html`. This approach allowed us to slim down to only the code we needed to run this (relatively simple) app, and by hosting the files in `public` we aim to improve offline performance. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Known Issues
+There is a [known issue](https://github.com/deadbelly/breathEZ/issues/65) with app that effects iOS users. The link to the FAQ page is not visible, and is therefore not clickable. However, we can confirm that the link element does render, and manually entering the correct url will make the FAQ load normally. We are currently working to resolve this issue. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Future Iterations
+There are number of improvements that could be made to this app. In addition to resolving the iOS bug we might decide to... 
 
-## Learn More
+-Improve the desktop and tablet views, perhaps by adding more detailed information. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+-Add logic that can slow down API calls to prevent users from hitting limits. Doing this would likely involve adding a loading screen. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+-Add cached data files that can store information such as a list of available states so that the app doesn't have to fetch this information every time. We can easily mock this up with dummy data, but would need to add logic that lets the cache automatically update. 
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contributors 
+This app was a group project for Module 3 of the Front End Engineering Program at [the Turing School of Software and Design](https://turing.io/). Our assignment was to design and build an app using unfamiliar technology, and we chose to design a PWA. 
+The Authors: 
+<table>  
+    <tr>  
+        <td> Thao Ma <a href="[https://github.com/thaomonster](https://github.com/thaomonster)">GH</td>  
+        <td> Boone Epstein <a href="[https://github.com/deadbelly](https://github.com/gaj23)">GH</td>  
+    </tr>  
+<td><img src="[https://avatars3.githubusercontent.com/u/67611512?s=400&u=ef3bac38d4f7d6d8a899d26ce1f0eb169f11bb9b&v=4](https://avatars3.githubusercontent.com/u/67611512?s=400&u=ef3bac38d4f7d6d8a899d26ce1f0eb169f11bb9b&v=4)" alt="Ms. Turtle"  
+ width="150" height="auto" /></td>  
+ <td><img src="[https://avatars.githubusercontent.com/u/67235778?s=460&u=a113049894ce35dfc7f3973875e51d1d32bff313&v=4](https://avatars1.githubusercontent.com/u/68332132?s=460&u=a54dd9d3eede7c5ae0704846c510001c89dc88f7&v=4)" alt="The Dead Belly"  
+ width="150" height="auto" /></td>  
+</table>
