@@ -58,14 +58,18 @@ There are number of improvements that could be made to this app. In addition to 
 
 ## Contributors 
 This app was a group project for Module 3 of the Front End Engineering Program at [the Turing School of Software and Design](https://turing.io/). Our assignment was to design and build an app using unfamiliar technology, and we chose to design a PWA. 
-The Authors: 
-<table>  
-    <tr>  
-        <td> Thao Ma <a href="[https://github.com/thaomonster](https://github.com/thaomonster)">GH</td>  
-        <td> Boone Epstein <a href="[https://github.com/deadbelly](https://github.com/gaj23)">GH</td>  
-    </tr>  
-<td><img src="[https://avatars3.githubusercontent.com/u/67611512?s=400&u=ef3bac38d4f7d6d8a899d26ce1f0eb169f11bb9b&v=4](https://avatars3.githubusercontent.com/u/67611512?s=400&u=ef3bac38d4f7d6d8a899d26ce1f0eb169f11bb9b&v=4)" alt="Ms. Turtle"  
- width="150" height="auto" /></td>  
- <td><img src="[https://avatars.githubusercontent.com/u/67235778?s=460&u=a113049894ce35dfc7f3973875e51d1d32bff313&v=4](https://avatars1.githubusercontent.com/u/68332132?s=460&u=a54dd9d3eede7c5ae0704846c510001c89dc88f7&v=4)" alt="The Dead Belly"  
- width="150" height="auto" /></td>  
+
+## Authors
+<table>
+    <tr>
+        <td> Thao Ma <a href="https://github.com/thaomonster">GH</td>
+        <td> Boone Epstein <a href="https://github.com/deadbelly">GH</td>
+        <td> Eric Campbell <a href="https://github.com/mainlyetcetera">GH</td>
+    </tr>
+ <td><img src="https://avatars3.githubusercontent.com/u/67611512?s=400&u=ef3bac38d4f7d6d8a899d26ce1f0eb169f11bb9b&v=4" alt="Ms. Turtle"
+ width="150" height="auto" /></td>
+ <td><img src="https://ca.slack-edge.com/T029P2S9M-U0184VA96K1-cf7535e7ceed-512" alt="Mr. Epstein"
+ width="150" height="auto" /></td>
+ <td><img src="https://avatars0.githubusercontent.com/u/70294115?s=460&u=b24fae5febb30e7d1c9507c51ee760dba5e396e5&v=4" alt="Mr. Campbell"
+ width="150" height="auto" /></td>
 </table>
