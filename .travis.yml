@@ -6,7 +6,12 @@ notifications:
 cache:
   npm: true
   directories:
+    - ~/.npm
+    - ./node_modules
     - ~/.cache
+  overide:
+    - npm ci
+    - npm run:cy verify
 install:
   - npm ci
   - npm run build
