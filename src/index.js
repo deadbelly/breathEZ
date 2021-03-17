@@ -7,3 +7,5 @@ import { BrowserRouter } from 'react-router-dom'
 const router = <BrowserRouter> <App /> </BrowserRouter>;
 
 ReactDOM.render(router, document.getElementById('root'));
+
+//add a small comment to code to test travis. this branch should not be merged.
