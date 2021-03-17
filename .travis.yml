@@ -1,18 +1,15 @@
 language: node_js
 node_js:
-- node
+  - "node"
 notifications:
   email: false
 cache:
   npm: true
-  directories: "~/.cache"
-install: "-npm ci -npm run build"
-before_script: "-npm start -- --silent &"
+  directories: ~/.cache
+install:
+  -npm ci
+  -npm run build
+before_script:
+  -npm start -- --silent &
 script:
-- "$ (npm bin)/cypress run"
-deploy:
-  provider: vercel
-  api_key:
-    secure: rgnUeVoVMcE+PY8KvfgJPbR3iBnfw1xLY2P/olfR5Bfv+5KfqOEuQ8nI+870tojIKC82TPOEcAUeYj+4EkHN+yEGjECsmrXD2mZ7EwJMFOFU+wTuQYQ0MGtHGFLlnEu+GKpz+hvabvvynHe9pPXyCRLUQKar5LBDiSGZaEzm79fHL8dItvBuDiMFuHKZusnoiwbIa9n6XIhrobdPlXaB1HmSdIj5zaPeoKucDaF4rzgg5IFr2J20v2JyvxccGSOw9tsj7MOfafK1XTzaNQMFIzcveUMmcZ8f7YzKXHq2MJVC4AurSISVccjxtmfzcCNsKGeJbZcMYqPc2flpUrvJOCKI/YEp38idtYCx/nfz9SqaQwABaC/8jUS/edMhWYRgscCnRIpburXI1zAoKr0YF3EwGxZQJ1MfKn/+5KhyHtYKAv57qZrdJgVB0zcVHCcA8I+9WebSCsNMrP/unMUhiYVjV3APU3izBSufso3PKcZ93ayn+clgyt9E6V94oudyWWRjptcq+bMD/YvmLln7liGPYFQXX96UNbWhKalZfoP7VNhrGdnLqYzj47hfpkwBT41YRg8F2dHnKJLOFbpGsXT+hKuBTjyAcl16QwrBFPOk7G+sCOzLl+rYJji9X9fJmoeskTazc7exHH9EHWBTwwdQcpiVCV8AyDChbhzs9cE=
-  app: breathEZ
-  skip_cleanup: true
+  - $ (npm bin)/cypress run
