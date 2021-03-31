@@ -1,5 +1,5 @@
 # BreathEZ
-BreathEZ is an app that informs users of air quality where they live, and in other cities across the US. It's Progressive Web Application designed for mobile use and is currently deployed [here](https://breath-ez.vercel.app/). The desktop version is fully functional but we highly recommend viewing the app on mobile. We should note however that there is a [known issue](https://github.com/deadbelly/breathEZ/issues/65) with BreathEZ on iOS. This issue is not present on android. 
+BreathEZ is an app that informs users of air quality where they live, and in other cities across the US. It's a Progressive Web Application designed for mobile use and is currently deployed [here](https://breath-ez.vercel.app/).
 
 ## Installation
 To install this app: 
@@ -43,9 +43,6 @@ We use [cypress](https://www.cypress.io/) for end to end and integration testing
 
 ## `sw.js` and `runRegistration.js`
 We originally used boilerplate service worker and registration logic provided to us by a `create-react-app` template. Eventually we converted this to a service worker of our own design that operates a little differently. This worker lives in our `public` directory, not `src` and the registration is called directly in `index.html`. This approach allowed us to slim down to only the code we needed to run this (relatively simple) app, and by hosting the files in `public` we aim to improve offline performance. 
-
-## Known Issues
-There is a [known issue](https://github.com/deadbelly/breathEZ/issues/65) with app that effects iOS users. The link to the FAQ page is not visible, and is therefore not clickable. However, we can confirm that the link element does render, and manually entering the correct url will make the FAQ load normally. We are currently working to resolve this issue. 
 
 ## Future Iterations
 There are number of improvements that could be made to this app. In addition to resolving the iOS bug we might decide to... 
