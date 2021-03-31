@@ -12,7 +12,19 @@ header {
   color: white;
   cursor: pointer;
   font-size: 1.3em;
-  margin-left: 80%;
+  margin-left: 40%;
   position: fixed;
   z-index: 100;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+   .link {
+    margin-left: 80%;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .link {
+   margin-left: 40%;
+ }
 }
